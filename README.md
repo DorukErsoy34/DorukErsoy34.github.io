@@ -2,8 +2,8 @@
 
 Doruk Ersoy
 <br>
-<a href="https://dorukersoy34.github.io/CSP.md">csp</a>
-
+<a href="https://dorukersoy34.github.io/CSP.md">csp</a> /
+<a href="https://dorukersoy34.github.io/developing in swift">developing in swift</a>
 <br>
 </p>
 <p align="center">
