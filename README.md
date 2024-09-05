@@ -3,9 +3,9 @@
 Doruk Ersoy
 <br>
 <a href="https://dorukersoy34.github.io/README.md">Home</a> /
-<a href="https://dorukersoy34.github.io/CSP.md">CSP</a> /
-<a href="https://dorukersoy34.github.io/developing in swift">Developing In Swift</a> /
-<a href="https://dorukersoy34.github.io/projects">Projects</a>
+<a href="https://dorukersoy34.github.io/CSP.html">CSP</a> /
+<a href="https://dorukersoy34.github.io/developing in swift.html">Developing In Swift</a> /
+<a href="https://dorukersoy34.github.io/projects.html">Projects</a>
 <br>
 </p>
 <p align="center">
