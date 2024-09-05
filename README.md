@@ -12,4 +12,4 @@ Doruk Ersoy
 
 Home CSP Projects Coding in swift
 </p>
-hello my name ıs Doruk.I have chosen CSP becasue i want to learn codıng ım a student ın hısar and my hobbıes are playing tenis, exploring, traveling,
+hello my name ıs Doruk.Im a 10th grade student in Hisar schools.I have chosen CSP becasue i want to learn codıng ım a student ın hısar and my hobbıes are playing tenis, exploring, traveling and playing drums.
