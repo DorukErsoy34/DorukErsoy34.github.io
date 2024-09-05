@@ -1,5 +1,5 @@
 </p>
-i have watched all the cs50 videos
+i have started watching the CS50 videos
 
 
 ı have watches all the way from 1.1 to 1.4 videos on colage board 
