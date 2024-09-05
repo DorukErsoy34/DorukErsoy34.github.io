@@ -6,3 +6,8 @@ i have started watching the CS50 videos
 <br>
 <a href="https://docs.google.com/document/d/1KbliphJ0r81r1YSAdh9pHXzXkWWhTPMWCCjCEaQstgg/edit">video summary of collageboard</a> 
 <br>
+</p>
+I have finished the AI For Everyone couse on Corasera and written a report about the cours
+<br>
+<a href="https://docs.google.com/document/d/1yHe5xrF9KK5zn3N-Gk3UvtEgIt2c39rEJZhMX6-Iw-o/edit?usp=sharing">AI for everyone couse report</a> 
+<br>
