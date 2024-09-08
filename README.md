@@ -1,5 +1,4 @@
 <p align="center">
-
 Doruk Ersoy
 <br>
 <a href="https://dorukersoy34.github.io/README.md">Home</a> /
