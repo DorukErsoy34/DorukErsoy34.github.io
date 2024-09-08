@@ -11,4 +11,12 @@ Doruk Ersoy
 
 Home CSP Projects Coding in swift
 </p>
-hello my name ıs Doruk.Im a 10th grade student in Hisar schools.I have chosen CSP becasue i want to learn codıng ım a student ın hısar and my hobbıes are playing tenis, exploring, traveling and playing drums.
+Hello, my name is Doruk, and I am currently a 10th-grade student at Hisar Schools. I have a strong passion for technology and have chosen CSP (Computer Science Principles) as part of my academic path because I am eager to learn how to code and deepen my understanding of how technology shapes our world. Learning to code is something I see as not just a skill, but a way of thinking that can open up countless opportunities in today's digital age.
+Beyond academics, I believe in a well-rounded life, which is reflected in my various hobbies. I enjoy playing tennis, which helps me stay active and focused. Exploring new places and traveling are also passions of mine, as I love discovering different cultures and gaining new perspectives. Additionally, I have a creative side that I express through music—I play the drums and find it to be a great outlet for both creativity and relaxation.
+I am excited to continue growing in both my academic and personal interests, always striving to push my boundaries and explore new possibilities.
+
+<!-- chat gpt helped write my introduction -->
+
+
+
+
