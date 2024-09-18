@@ -17,6 +17,14 @@ I am excited to continue growing in both my academic and personal interests, alw
 
 <!-- chat gpt helped write my introduction -->
 
+<p align="center"> Doruk Ersoy <br> <a href="https://dorukersoy34.github.io/README.md">Home</a> / <a href="https://dorukersoy34.github.io/CSP.html">CSP</a> / <a href="https://dorukersoy34.github.io/developing in swift.html">Developing In Swift</a> / <a href="https://dorukersoy34.github.io/projects.html">Projects</a> <br> </p> <p align="center"> Home | CSP | Projects | Coding in Swift </p>
+
+Hello! My name is Doruk, a 10th-grade student at Hisar Schools with a passion for technology. I’m currently studying CSP (Computer Science Principles) to dive deeper into coding and the role of technology in shaping the future. Coding, to me, is more than just a skill—it's a mindset for unlocking opportunities in today’s digital world.
+
+In addition to my academic pursuits, I lead a balanced lifestyle. I enjoy playing tennis, exploring new places, and traveling to discover diverse cultures. Music is another creative outlet for me, especially drumming, which brings both relaxation and expression.
+
+I'm eager to continue growing in both my academic and personal interests, always striving to expand my horizons.
+
 
 
 
