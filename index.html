@@ -5,89 +5,119 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doruk Ersoy</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
+        body, html {
+            height: 100%;
             margin: 0;
-            padding: 0;
-            color: #333;
+            font-family: Arial, sans-serif;
+            color: #fff;
         }
+
+        /* Background styling */
+        .background {
+            background-image: url('https://dorukersoy34.github.io/pexels-pixabay-531880.jpg'); /* Replace with your custom image */
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+
+        /* Dark overlay to improve readability */
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.6);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
         .container {
+            position: relative;
+            z-index: 2;
             max-width: 900px;
             margin: 50px auto;
-            text-align: center;
             padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
+            text-align: center;
         }
+
         h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            color: #0077b6;
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: #e8e9eb;
         }
+
         nav {
             margin-bottom: 30px;
         }
+
         nav a {
-            color: #0077b6;
+            color: #e8e9eb;
             text-decoration: none;
             margin: 0 15px;
-            font-size: 1.2em;
+            font-size: 1.3em;
             transition: color 0.3s ease;
         }
+
         nav a:hover {
-            color: #023e8a;
+            color: #e8e9eb;
         }
+
         p {
-            font-size: 1.1em;
-            line-height: 1.6;
+            font-size: 1.2em;
+            line-height: 1.8;
             margin-bottom: 30px;
         }
-footer {
-    margin-top: 50px;
-    padding: 20px 0;
-    background-color: #0077b6;
-    color: #fff;
-    text-align: center;
-}
-footer p {
-    margin: 0;
-    font-size: 0.9em;
-}
-footer a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-}
-footer a:hover {
-    color: #ffdd00;
-}
+
+        /* Footer styling */
+        footer {
+            margin-top: 50px;
+            padding: 20px 0;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9em;
+        }
+
+        footer a {
+            color: #e8e9eb;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            color: #e8e9eb;
+        }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>Doruk Ersoy</h1>
-        <nav>
-            <a href="https://dorukersoy34.github.io/README.html">Home</a> /
-            <a href="https://dorukersoy34.github.io/CSP.html">CSP</a> /
-            <a href="https://dorukersoy34.github.io/developing in swift.html">Developing In Swift</a> /
-            <a href="https://dorukersoy34.github.io/projects.html">Projects</a>
-        </nav>
+    <div class="background">
+        <div class="overlay"></div>
 
-        <p>Hello, my name is Doruk, and I am currently a 10th-grade student at Hisar Schools. I have a strong passion for technology and have chosen CSP (Computer Science Principles) as part of my academic path because I am eager to learn how to code and deepen my understanding of how technology shapes our world. Learning to code is something I see as not just a skill, but a way of thinking that can open up countless opportunities in today's digital age.</p>
-        
-        <p>Beyond academics, I believe in a well-rounded life, which is reflected in my various hobbies. I enjoy playing tennis, exploring new places, traveling, and playing the drums.</p>
+        <div class="container">
+            <h1>Doruk Ersoy</h1>
+            <nav>
+                <a href="https://dorukersoy34.github.io/README.html">Home</a> /
+                <a href="https://dorukersoy34.github.io/CSP.html">CSP</a> /
+                <a href="https://dorukersoy34.github.io/developing in swift.html">Developing In Swift</a> /
+                <a href="https://dorukersoy34.github.io/projects.html">Projects</a>
+            </nav>
 
+            <p>Hello, my name is Doruk, and I am currently a 10th-grade student at Hisar Schools. I have a strong passion for technology and have chosen CSP (Computer Science Principles) as part of my academic path because I am eager to learn how to code and deepen my understanding of how technology shapes our world. Learning to code is something I see as not just a skill, but a way of thinking that can open up countless opportunities in today's digital age.</p>
+            
+            <p>Beyond academics, I believe in a well-rounded life, which is reflected in my various hobbies. I enjoy playing tennis, exploring new places, traveling, and playing the drums.</p>
+        </div>
     </div>
+
+    <footer>
+        <p>&copy; 2024 Doruk Ersoy | <a href="mailto:doruk.ersoy@hisarschool.k12.tr">contact me</a></p>
+    </footer>
 
 </body>
 </html>
-
-<footer>
-    <p>&copy; 2024 Doruk Ersoy | <a href="doruk.ersoy@hisarschool.k12.tr">contact me</a></p>
-</footer>
-
-
-
