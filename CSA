@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Learning Journey</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://dorukersoy34.github.io/pexels-pixabay-531880.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent for readability */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #0077b6;
+        }
+        p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        nav {
+            margin-bottom: 30px;
+        }
+        nav a {
+            color: #0077b6;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2em;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #023e8a;
+        }
+        footer {
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>My Learning Journey</h1>
+         <nav>
+            <a href="https://dorukersoy34.github.io/README.html">Home</a> /
+            <a href="https://dorukersoy34.github.io/CSP.html">CSP</a> /
+            <a href="https://dorukersoy34.github.io/developing in swift.html">Developing In Swift</a> /
+            <a href="https://dorukersoy34.github.io/projects.html">Projects</a>
+        </nav>
+         <p>I hsve completed:  
+         ...................</p>
+        <p>Collageboard CSA notes</p>
+        <pre style="text-align: left;">
+
+
+
+            
+</pre>
+        <a href="https://docs.google.com/document/d/1KbliphJ0r81r1YSAdh9pHXzXkWWhTPMWCCjCEaQstgg/edit">Video Summary of College Board</a>
+        <br>
+        <a href="https://drive.google.com/file/d/1HoaE8hk7wWJjKl-AIpa9mppQuxnU0eIE/view?usp=sharing">Video Summary of big idea 4 & 5</a>
+        <br>
+        <a href="https://drive.google.com/file/d/1QtRe7tyCPpsh9mJDgxvcdQhHUsTLbOfy/view?usp=sharing">Video Summary Video</a>
+
+        <p>I have finished the AI For Everyone course on Coursera and written a report about the course.</p>
+        <a href="https://docs.google.com/document/d/1yHe5xrF9KK5zn3N-Gk3UvtEgIt2c39rEJZhMX6-Iw-o/edit?usp=sharing">AI For Everyone Course Report</a>
+
+    
+        <footer>
+            <!-- ChatGPT helped write this content -->
+        </footer>
+    </div>
+
+</body>
+</html>
