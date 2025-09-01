@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects - Doruk Ersoy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('https://dorukersoy34.github.io/pexels-pixabay-531880.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #0077b6;
+        }
+        h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #0077b6;
+        }
+        nav {
+            margin-bottom: 30px;
+        }
+        nav a {
+            color: #0077b6;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2em;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #023e8a;
+        }
+        p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        footer {
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>My Projects</h1>
+          <nav>
+            <a href="https://dorukersoy34.github.io/README.html">Home</a> /
+            <a href="https://dorukersoy34.github.io/CSP.html">CSP</a> /
+            <a href="https://dorukersoy34.github.io/developing in swift.html">Developing In Swift</a> /
+            <a href="https://dorukersoy34.github.io/projects.html">Projects</a>
+        </nav>
+        
+        <p>Creating our GitHub accounts was our first project, and this is how I created mine:</p>
+        <p>Firstly I created a github account that can be easily done without any experience. Secondly we have to create a repository. In this we have to get a domain name which i chose dorukersoy34. After this we have successfully created our first github repository. We can click onto our domain name and see an empty page that we can fill in later. 
+In our repository we will go ahead and create a readme site in our repository . it's already in the application it's set up for you we just have to open that . afterwards we could use templates to make our readme look better or we could just keep it simple for a while. For me I kept it simple and have no template that is in my repository. After I created a few links that I also can edit inside. I got all the extra links that i have created and put them to my readme so that all the things that i have put in those links are reachable from the repository that is public.
+
+“https://dorukersoy34.github.io/README.html”</p>
+
+        <h2>Projects</h2>
+        <p>project1:</p>
+            
+        <a href="">project1</a>
+
+        <p>project2:</p>
+            
+        <a href="">project2</a>
+
+    
+        
+        <footer>
+            <!-- ChatGPT helped write this content -->
+        </footer>
+    </div>
+
+</body>
+</html>
