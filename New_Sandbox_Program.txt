@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class MyProgram {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        
+        
+        //import the scanner for user input
+        //ask the user to give two input number
+        //print all the answers to sum,difference... 
+            System.out.println("number 1?");
+            int num1 = scanner.nextInt();
+            System.out.println("number 2?");
+            int num2 = scanner.nextInt();
+            System.out.println("sum: " + (num1 + num2));
+            System.out.println("difference: " + (num1 - num2));
+            System.out.println("multiplication: " + (num1 * num2));
+            System.out.println("division: " + (num1 / num2));
+    }
+}
