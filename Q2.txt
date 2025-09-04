@@ -1,0 +1,53 @@
+import java.util.Scanner;
+public class MyProgram 
+{
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        //day1
+        System.out.println("number of vanila icecream sold:day1");
+        int vanila1 = scanner.nextInt();
+        System.out.println("number of choclate icecream sold:day1");
+        int chocolate1 = scanner.nextInt();
+        System.out.println("number of strawberry icecream sold:day1");
+        int strawberry1 = scanner.nextInt();
+        int total1 = (vanila1 + chocolate1 + strawberry1);
+        System.out.println(total1);
+        //day2
+                System.out.println("number of vanila icecream sold:day2");
+        int vanila2 = scanner.nextInt();
+        System.out.println("number of choclate icecream sold:day2");
+        int chocolate2 = scanner.nextInt();
+        System.out.println("number of strawberry icecream sold:day2");
+        int strawberry2 = scanner.nextInt();
+        int total2 = (vanila2 + chocolate2 + strawberry2);
+        System.out.println(total2);
+        //day3
+                System.out.println("number of vanila icecream sold:day3");
+        int vanila3 = scanner.nextInt();
+        System.out.println("number of choclate icecream sold:day3");
+        int chocolate3 = scanner.nextInt();
+        System.out.println("number of strawberry icecream sold:day3");
+        int strawberry3 = scanner.nextInt();
+        int total3 = (vanila3 + chocolate3 + strawberry3);
+        System.out.println(total3);
+        //hesaplar
+        int totaltotal = (total1 + total2 + total3);
+        double totaltotal2 = (total1 + total2 + total3);
+
+        System.out.println("total: " + totaltotal);
+        System.out.println("total in decimal: " + totaltotal2);
+        System.out.println("total avarage: " + (totaltotal2/6));
+        System.out.println("total in decimal avarage: " + (totaltotal/6));
+
+        // tesekkur
+        System.out.println("Here is your ice cream treat:");
+        System.out.println("~~~~~");
+        System.out.println("( o o )");
+        System.out.println("(  V  )");
+        System.out.println("\\ | /");
+        System.out.println("\\|/");
+        System.out.println(" |");
+        System.out.println(" |");
+
+    }
+}
