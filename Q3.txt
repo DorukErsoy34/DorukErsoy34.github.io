@@ -1,0 +1,27 @@
+import java.util.Scanner;
+public class MyProgram
+{
+    public static void main(String[] args){
+
+    Scanner scanner = new Scanner(System.in);
+    System.out.println("mass (kg): ");
+    double mass = scanner.nextDouble();
+    System.out.println("engine force (N): ");
+    double force = scanner.nextDouble();
+    System.out.println("burn time (s): ");
+    double time = scanner.nextDouble();
+    
+    System.out.println("Net acceleration : "+(force / mass));
+    System.out.println("Final velocity : "+(mass / time));
+    System.out.println("Altitude reached : "+(mass));
+    
+    System.out.println("    /\");
+    System.out.println("   /  \");
+    System.out.println("  |====|");
+    System.out.println("  |    |");
+    System.out.println("  |NASA|");
+    System.out.println("   ||||");
+    System.out.println("   ||||");
+
+    }
+}
