@@ -1,0 +1,13 @@
+public class MyProgram
+{
+    public static void main(String[] args)
+    {
+        int num1 = (int)(Math.random() * 10 + 1);
+        int num2 = (int)(Math.random() * 10 + 1);
+        int num3 = (int)(Math.random() * 10 + 1);
+        int min = Math.min(num1, Math.min(num2, num3));
+        int max = Math.max(num1, Math.max(num2, num3));
+        int mid = (num1 + num2 + num3) - (min + max);
+        System.out.println(max + ">" + mid + ">" + min);
+    }
+}
