@@ -1,0 +1,22 @@
+import java.util.Scanner;
+public class MyProgram
+{
+    public static void main(String[] args)
+    {
+    Scanner scanner = new Scanner(System.in);
+    
+    System.out.println("first number ");
+    int num1 = scanner.nextInt();
+    System.out.println("second number ");
+    int num2 = scanner.nextInt();
+    System.out.println(num1);
+    System.out.println(num2);
+    
+    int temp = num1;
+    num1 = num2;
+    num2 = temp;
+    System.out.println("new first number"+(num1));
+    System.out.println("new second number"+(num2));
+    
+    }
+}
