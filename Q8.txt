@@ -1,0 +1,27 @@
+import java.util.Scanner;
+public class MyProgram
+{
+    public static void main(String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        
+        System.out.print("Enter R (0–255): ");
+        int R = input.nextInt();
+        System.out.print("Enter G (0–255): ");
+        int G = input.nextInt();
+        System.out.print("Enter B (0–255): ");
+        int B = input.nextInt();  
+        
+        double r = R / 255.0;
+        double g = G / 255.0;
+        double b = B / 255.0;
+        
+        double Y = 0.299*r + 0.587*g + 0.114*b;
+        double I = 0.596*r - 0.274*g - 0.322*b;
+        double Q = 0.211*r - 0.523*g + 0.312*b;
+        
+        System.out.println("Y = " + Y);
+        System.out.println("I = " + I);
+        System.out.println("Q = " + Q);
+    }
+}
