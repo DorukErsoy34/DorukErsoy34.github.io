@@ -1,0 +1,30 @@
+import java.util.Scanner;
+public class MyProgram
+{
+    public static void main(String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter Y (0–1): ");
+        double Y = input.nextDouble();
+        System.out.print("Enter I (–0.5957–0.5957): ");
+        double I = input.nextDouble();
+        System.out.print("Enter Q (–0.5226–0.5226): ");
+        double Q = input.nextDouble();
+        
+        double r = Y + 0.956*I + 0.621*Q;
+        double g = Y - 0.272*I - 0.647*Q;
+        double b = Y - 1.106*I + 1.703*Q;
+        
+        r = Math.max(0, Math.min(1, r));
+        g = Math.max(0, Math.min(1, g));
+        b = Math.max(0, Math.min(1, b));
+        
+        int R = (int)(r * 255);
+        int G = (int)(g * 255);
+        int B = (int)(b * 255);
+        
+        System.out.println("R = " + R);
+        System.out.println("G = " + G);
+        System.out.println("B = " + B);
+    }
+}
