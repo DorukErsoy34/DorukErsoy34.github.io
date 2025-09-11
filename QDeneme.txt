@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class MyProgram {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Write 1st grade: ");
+        int grade1 = input.nextInt();
+
+        System.out.println("Write 2nd grade: ");
+        int grade2 = input.nextInt();
+
+        System.out.println("Write 3rd grade: ");
+        int grade3 = input.nextInt();
+
+        int total = computeTotal(grade1, grade2, grade3);
+        double average = computeAverage(total);
+        String letter = letterGrade(average);
+
+        System.out.println("Total: " + total);
+        System.out.println("Average: " + average);
+        System.out.println("Letter grade: " + letter);
+
+    }
+
+    static int computeTotal(int a, int b, int c) {
+        return a + b + c;
+    }
+
+    static double computeAverage(int total) {
+        return total / 3.0;
+    }
+
+    static String letterGrade(double avg) {
+        if (avg >= 90) return "A";
+        else if (avg >= 80) return "B";
+        else if (avg >= 70) return "C";
+        else if (avg >= 60) return "D";
+        else return "F";
+    }
+}
