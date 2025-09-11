@@ -1,0 +1,27 @@
+import java.util.Scanner;
+public class MyProgram
+{
+    public static void main(String[] args)
+    {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("input side 1: ");
+        int side1 = scanner.nextInt();
+        System.out.println("input side 2: ");
+        int side2 = scanner.nextInt();
+        System.out.println("input side 3: ");
+        int side3 = scanner.nextInt();
+        boolean tiangleis = istriangle(side1 , side2, side3);
+        String type = triangletype(side1 , side2, side3);
+        System.out.println("is a triangle " + tiangleis);
+        System.out.println("it is a " + type + " triangle");
+    }
+    static boolean istriangle (int a, int b, int c){
+    return (a + b >= c) && (a + c >= b) && (b + c >= a);
+    }
+    static String triangletype(int a, int b, int c){
+    if (a == b && b == c) return "equilateral";
+    else if (a == b || a == c || b == c) return "isoscles";
+    else if (a != b && a != c && b != c) return "scalene";
+    else return "not a triangle";
+    }
+}
