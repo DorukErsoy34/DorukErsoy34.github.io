@@ -1,0 +1,18 @@
+import java.util.Scanner;
+public class MyProgram
+{ 
+    public static void main(String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        System.out.println("write num1: ");
+        int num1 = input.nextInt();
+        System.out.println("write num2: ");
+        int num2 = input.nextInt();
+        boolean div7 = isdiv7 (num1, num2);
+        System.out.println(div7);
+    }
+    static boolean isdiv7 (int x,int y){
+    return ( x % 7 == 0) ||( y % 7 == 0);
+        
+    };
+}
