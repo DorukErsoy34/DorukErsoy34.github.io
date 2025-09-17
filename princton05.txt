@@ -1,0 +1,22 @@
+import java.util.Scanner;
+public class MyProgram
+{ 
+    public static void main(String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        System.out.println("write the first side");
+        int s1 = input.nextInt();
+        System.out.println("write the second side");
+        int s2 = input.nextInt();
+        System.out.println("write the third side");
+        int s3 = input.nextInt();
+        double are = area(s1, s2, s3);
+        System.out.println(are);
+        
+    }
+    static double area(int x, int y, int z){
+        double s = (x + y + z)/2;
+        return Math.sqrt(s*(s-x)*(s-y)*(s-z));
+    }
+    
+}
