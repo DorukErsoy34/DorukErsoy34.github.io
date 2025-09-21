@@ -1,0 +1,14 @@
+import java.util.Scanner;
+public class MyProgram
+{
+    public static void main(String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        System.out.println("input your weight in kg: ");
+        double Weight = input.nextDouble();
+        System.out.println("input your height in meters: ");
+        double Height = input.nextDouble();
+        System.out.println("your BMI is "+ Weight/(Height*Height));
+        
+    }
+}
