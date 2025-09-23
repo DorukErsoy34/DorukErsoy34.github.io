@@ -1,0 +1,32 @@
+import java.util.Scanner;
+public class Student {
+    // Attributes
+    String name;
+    int grade;
+    
+    // Constructor
+    Student(String name, int grade) {
+        this.name = name;
+        this.grade = grade;
+    }
+    
+    // Method
+    void printInfo() {
+        System.out.println("Name: " + name + ", Grade: " + grade);
+    }
+    
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        System.out.println("Enter your name: ");
+        String name = input.nextLine();
+        System.out.println("Enter your grade: ");
+        int not = input.nextInt();
+        
+        // Object/Instance
+        Student student1 = new Student(name, not);
+        
+        // Call method
+        student1.printInfo();
+    }
+}
