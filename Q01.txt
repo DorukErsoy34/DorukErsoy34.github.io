@@ -1,0 +1,68 @@
+// CLASS definition
+public class Car {
+    // ATTRIBUTES (fields / instance variables)
+    String name;
+    String color;
+    int speed;
+    int position;
+    
+    // CONSTRUCTOR (runs when a new Car object is created)
+    Car(String name, String color) {
+        this.name = name;
+        this.color = color;
+        this.speed = 0;
+        this.position = 0;
+    }
+    
+    // METHOD: move forward
+    void forward(int meters) {
+        position += meters;
+        System.out.println(name + "'s position has been moved " + meters + " meters forward.");
+    }
+    
+    // METHOD: move backward
+    void backward(int meters) {
+        position -= meters;
+        System.out.println(name + "'s position has been moved " + meters + " meters backward.");
+    }
+    
+    // METHOD: return current speed
+    int getSpeed() {
+        return speed;
+    }
+    
+    // MAIN METHOD (program starts here)
+    public static void main(String[] args) {
+        // OBJECT / INSTANCE creation
+        Car car1 = new Car("Ferrari", "Red");   // car1 is an object of Car
+        Car car2 = new Car("BMW", "Blue");      // car2 is another object of Car
+        
+        // METHOD calls (using the objects)
+        car1.forward(10);   // calls forward() for car1
+        car2.backward(30);  // calls backward() for car2
+    }
+}
+
+/*
+START
+
+// Step 1: Create car objects
+DECLARE car1 AS Car
+DECLARE car2 AS Car
+
+// Step 2: Set attributes
+SET car1.name = "Ferrari"
+SET car1.color = "Red"
+SET car1.speed = 0
+
+SET car2.name = "BMW"
+SET car2.color = "Black"
+SET car2.speed = 0
+
+// Step 3: Use void methods (actions)
+CALL car1.accelerate()   // Ferrari speeds up by 10
+CALL car1.accelerate()   // Ferrari speeds up again
+CALL car2.accelerate()   // BMW speeds up once
+
+END
+*/
