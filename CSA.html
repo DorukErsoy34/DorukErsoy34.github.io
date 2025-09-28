@@ -142,6 +142,154 @@ Strings are objects with methods for handling text.
 Example: "Hello".substring(0, 2) → "He", "Hello".length() → 5
 Quick takeaway: String methods make it easy to analyze and transform text.
             
+JavaCheat sheet
+🔹 Creating Strings
+String word = "minus";                 // Easy way
+String word2 = new String("minus");    // Formal way
+//Both create "minus".
+
+🔹 String Immutability
+String word = "minus";
+word.substring(2,4);   // "nu"
+word.toUpperCase();    // "MINUS"
+word.replace('m','l'); // "linus"
+System.out.println(word); // still "minus"
+
+🔹 Length
+String str = "hello";
+str.length(); // 5
+//Last character index = length() - 1
+
+🔹 Characters
+String word = "minus";
+char c = word.charAt(2);       // 'n'
+String s = word.substring(2,3); // "n"
+char first = word.charAt(0);                 // 'm'
+char last = word.charAt(word.length()-1);    // 's'
+
+🔹 Concatenation
+String str1 = "hello";
+String str2 = "oh you fail";
+
+System.out.println(str1 + str2);        // "hellooh you fail"
+System.out.println(str1 + str1);        // "hellohello"
+System.out.println(str2 + " " + str1);  // "oh you fail hello"
+
+
+🔹 Substring
+String phrase = "In a hole in the ground";
+
+// substring(from, to) → (from index, up to but NOT including to)
+phrase.substring(0,2);   // "In"
+phrase.substring(5,10);  // "hole "
+phrase.substring(17);    // "ground"
+
+🔹 indexOf
+String phrase = "Never laugh at live dragons";
+phrase.indexOf("laugh"); // 6
+phrase.indexOf("a");     // 7
+phrase.indexOf("dead");  // -1 (not found)
+
+🔹 equals
+String a = "hello";
+String b = "hello";
+String c = "Hello";
+a.equals(b); // true
+a.equals(c); // false
+//Don’t use == for Strings.
+
+🔹 compareTo
+"hello".compareTo("hello"); // 0
+
+Both words are identical.
+Return: 0.
+"cat".compareTo("dog");     // negative (before)
+
+Compare letter by letter:
+"c" vs "d"
+Since 'c' comes before 'd' in the alphabet, "cat" comes before "dog".
+Return: a negative number (specifically -1 because 'c' - 'd' = -1 in Unicode).
+
+"zoo".compareTo("apple");   // positive (after)
+
+Compare first letters:
+"z" vs "a"
+'z' comes after 'a', so "zoo" comes after "apple".
+Return: a positive number (specifically 25 because 'z' - 'a' = 25).
+System.out.println("hello".compareTo("hello"));  // 0
+System.out.println("hello".compareTo("jello"));  // -2 (h < j)
+System.out.println("jello".compareTo("hello"));  // 2  (j > h)
+System.out.println("Hello".compareTo("hello"));  // -32 (H < h)
+
+// Examples
+System.out.println("monkey".compareTo("money")); // positive (6)
+System.out.println("car".compareTo("star"));     // negative (-16)
+System.out.println("Mario".compareTo("Luigi"));  // positive (1)
+System.out.println("fail".compareTo("fail"));    // 0
+System.out.println("vid".compareTo("videoplayer")); // negative (-8)
+System.out.println("CHS".compareTo("GHS"));      // negative (-4)
+System.out.println("human".compareTo("hum"));    // positive (2)
+
+
+
+
+🔹 Looping Through All Characters
+
+String word = "minus";
+for (int i = 0; i < word.length(); i++) {
+    System.out.println(word.charAt(i));
+}
+
+String word = "minus";
+for (int i = 0; i < word.length(); i++) {
+    System.out.println(word.substring(i, i + 1));
+}
+//Both outputs
+// Output:
+// m
+// i
+// n
+// u
+// s
+
+🔹 Convert to a String
+String result1 = "" + 5;
+System.out.println(result1); // "5"
+String result2 = "" + 'a';
+System.out.println(result2); // "a"
+String result3 = String.valueOf(5);
+System.out.println(result3); // "5"
+
+🔹 Append a String
+String str1 = "hello";
+String str2 = "oh you fail";
+str1 = str1 + str1;
+System.out.println(str1); // "hellohello"
+str1 += str2;
+System.out.println(str1); // "hellohellooh you fail"
+str2 += str1;
+System.out.println(str2); // "oh you failhellohellooh you fail"
+
+
+🔹 Repeat Strings Multiple Times
+public String repeat(String word, int count) {
+    String result = "";
+    for (int i = 0; i < count; i++) {
+        result += word;
+    }
+    return result;
+}
+
+// Example calls:
+System.out.println(repeat("alright", 3));
+// "alrightalrightalright"
+
+System.out.println(repeat("oh no", 7));
+// "oh nooh nooh nooh nooh nooh nooh no"
+
+
+
+
 </pre>
         <p>
             How i created the github acount and my source for big idea summaries
