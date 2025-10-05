@@ -69,6 +69,8 @@
          ...................</p>
         <p>Big idea notes</p>
         <pre style="text-align: left;">
+UNIT 1:
+            
 1.1
 Introduction to Algorithms, Programming, and Compilers
 An expression to an algoritim can cause significant amount of damage if its not detailed enough of missleading. 
@@ -230,9 +232,6 @@ System.out.println("vid".compareTo("videoplayer")); // negative (-8)
 System.out.println("CHS".compareTo("GHS"));      // negative (-4)
 System.out.println("human".compareTo("hum"));    // positive (2)
 
-
-
-
 🔹 Looping Through All Characters
 
 String word = "minus";
@@ -286,6 +285,54 @@ System.out.println(repeat("alright", 3));
 
 System.out.println(repeat("oh no", 7));
 // "oh nooh nooh nooh nooh nooh nooh no"
+
+
+UNIT 2:
+
+🔁 Iteration
+Iteration means repeating a section of code multiple times.
+In Java, this is done using loops such as:
+for loops (when you know how many times to repeat)
+while loops (when you repeat until a condition becomes false)
+Example:
+for (int i = 0; i < 5; i++) {
+    System.out.println("Hello!");
+}
+This prints “Hello!” five times.
+
+⚙️ Selection
+Selection is when a program makes decisions based on conditions.
+It allows the program to choose different paths of execution.
+The most common selection structure is the if-else statement.
+Example:
+if (score >= 10) {
+    System.out.println("You passed!");
+} else {
+    System.out.println("Try again!");
+}
+Here, the output depends on whether the score condition is true or false.
+
+🧩 Boolean Expressions
+A boolean is a data type that can hold only two values: true or false.
+Boolean expressions are used in decision-making and control structures.
+Example:
+boolean isEven = (number % 2 == 0);
+System.out.println(isEven);
+This prints true if the number is even, or false otherwise.
+
+🔄 If-Else Statements
+The if-else structure is a key part of algorithm design because it introduces logic and flexibility.
+It checks a condition, and if it’s true, it executes one block of code; otherwise, it executes another.
+
+Example:
+if (temperature > 30) {
+    System.out.println("It's hot outside!");
+} else if (temperature >= 20) {
+    System.out.println("It's warm.");
+} else {
+    System.out.println("It's cold!");
+}
+This uses multiple conditions to select one of several possible outcomes.
 
 
 
