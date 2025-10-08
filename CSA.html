@@ -334,7 +334,40 @@ if (temperature > 30) {
 }
 This uses multiple conditions to select one of several possible outcomes.
 
+2.4 Nested if Statements
+An if statement inside another if (or else).
+Used when a decision depends on another condition.
+Example:
+if (condition1) {
+    if (condition2) {
+        // both true
+    } else {
+        // condition1 true, condition2 false
+    }
+} else {
+    // condition1 false
+}
+Nesting too deep can reduce readability.
 
+2.5 Compound Boolean Expressions
+Combine multiple boolean conditions using logical operators:
+AND && → true if both are true
+OR || → true if at least one is true
+NOT ! → negates a boolean
+Example:
+boolean canRide = age >= 12 && height >= 48;
+boolean alert = !isSafe || hasWarning;
+Parentheses help clarify order of operations.
+    
+2.6 Comparing Boolean Expressions
+Check if boolean expressions produce the same result.
+== compares primitive values.
+.equals() compares object contents.
+Example:
+boolean a = true;
+boolean b = (5 > 3);
+System.out.println(a == b); // true
+For objects like Strings, == checks reference; use .equals() for content comparison.
 
 
 </pre>
