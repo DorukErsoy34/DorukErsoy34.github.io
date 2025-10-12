@@ -369,7 +369,67 @@ boolean b = (5 > 3);
 System.out.println(a == b); // true
 For objects like Strings, == checks reference; use .equals() for content comparison.
 
+2.7 While Loops
+Definition: A while loop repeatedly executes a block of code as long as a condition is true.
+Syntax:
+while (condition) {
+    // code to repeat
+}
+Key Points:
+Condition is checked before the loop body runs (pre-test loop).
+Infinite loop risk if condition never becomes false.
+Can be used for unknown number of iterations.
+Example:
+int count = 0;
+while (count < 5) {
+    System.out.println(count);
+    count++;
+}
 
+2.8 For Loops
+Definition: A for loop is used when the number of iterations is known or predictable.
+Syntax:
+for (initialization; condition; update) {
+    // code to repeat
+}
+Key Points:
+Initialization: run once at the start.
+Condition: checked before each iteration.
+Update: executed after each iteration.
+Can count up or down, or even use multiplication/division.
+Example:
+for (int i = 0; i < 5; i++) {
+    System.out.println(i);
+}
+
+2.9 Implementing Selection and Iteration Algorithms
+Selection (Decision Making)
+Purpose: Choose between alternatives using if, else if, else, or switch.
+Example:
+int num = 10;
+if (num > 0) {
+    System.out.println("Positive");
+} else if (num < 0) {
+    System.out.println("Negative");
+} else {
+    System.out.println("Zero");
+}
+Iteration (Repeating Tasks)
+Purpose: Repeat tasks using loops (while, for, do-while).
+Common Patterns:
+Counter-controlled iteration: repeat N times (use for).
+Sentinel-controlled iteration: repeat until a special value is entered (use while).
+Example (Counter-controlled):
+for (int i = 1; i <= 5; i++) {
+    System.out.println("Iteration " + i);
+}
+Example (Sentinel-controlled):
+Scanner input = new Scanner(System.in);
+int value = 0;
+while (value != -1) {
+    System.out.print("Enter a number (-1 to stop): ");
+    value = input.nextInt();
+}
 </pre>
         <p>
             How i created the github acount and my source for big idea summaries
