@@ -1,0 +1,21 @@
+
+import java.util.Scanner;
+
+public class MyProgram {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
+        System.out.print("Enter m1 (earth-masses): ");
+        double m1 = in.nextDouble();
+
+        System.out.print("Enter m2 (earth-masses): ");
+        double m2 = in.nextDouble();
+
+        System.out.print("Enter a (km): ");
+        double a = in.nextDouble();
+
+        double r1 = a * m2 / (m1 + m2);
+        System.out.println(r1);
+    }
+}
+  
