@@ -1,0 +1,66 @@
+import java.util.Scanner;
+public class MyProgram
+{
+    public static void main(String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        //11.
+        System.out.println("input num a: ");
+        int a = input.nextInt();
+        System.out.println("input num b: ");
+        int b = input.nextInt();
+        System.out.println("input num c: ");
+        int c = input.nextInt();
+        System.out.println(equals(a,b,c));
+        //leap year.13
+        System.out.println("input the year you want to see if leap year: ");
+        int year = input.nextInt();
+        System.out.println(isLeapyear(year));
+        //*square.29
+        System.out.println("input the length of the side of the square (1-20): ");
+        int side = input.nextInt();
+        Square(side);
+    }
+    static boolean equals(int a, int b, int c){
+        boolean eq;
+        boolean aq;
+        
+        if ((a!=0 && b!=0) && c!=0){
+            eq = true;
+        }else{
+            eq = false;
+        }
+        if ((a/b) == (b/c)){
+            aq = true;
+        }else{
+            aq = false;
+        }
+        if (aq && eq){
+            return true;
+        }else{
+            return aq && eq;
+        }
+    }
+    
+    static boolean isLeapyear(int year){
+        if (((year % 4 == 0) && (year% 100 != 0)) || (year % 400 == 0)){
+            return true;
+        }else{
+            return false;
+        }
+    }
+     static void Square(int side) {
+        for (int i = 0; i < side; i++) {  // row loop
+            for (int j = 0; j < side; j++) {  // column loop
+                if (i == 0 || i == side - 1 || j == 0 || j == side - 1) {
+                    System.out.print("*");  // stay on same line
+                } else {
+                    System.out.print(" ");  // inside = space
+                }
+            }
+            System.out.println();  // move to next line after row finishes
+        }
+      
+    }
+    
+}
