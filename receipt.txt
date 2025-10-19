@@ -1,0 +1,75 @@
+import java.util.Scanner;
+
+public class Receipt5 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+      
+        System.out.print("Enter your full high school name: ");
+        String schoolName = input.nextLine();
+
+        
+        String initials = "";
+        initials += schoolName.charAt(0); 
+        for (int i = 0; i < schoolName.length(); i++) {
+            if (schoolName.charAt(i) == ' ') { 
+                initials += schoolName.charAt(i + 1);
+            }
+        }
+        initials = initials.toUpperCase();
+
+     
+        double taxRate = 0.15;
+        double drinkPrice = 1.50;
+        double candyPrice = 1.25;
+        double hotDogPrice = 2.75;
+        double hamburgerPrice = 3.50;
+
+       
+        int orderNum = (int)(Math.random() * 100) + 1; 
+
+        System.out.print("How many drinks? ");
+        int drinkQty = input.nextInt();
+        System.out.print("How many candies? ");
+        int candyQty = input.nextInt();
+        System.out.print("How many hot dogs? ");
+        int hotDogQty = input.nextInt();
+        System.out.print("How many hamburgers? ");
+        int hamburgerQty = input.nextInt();
+
+   
+        double subtotal = (drinkPrice * drinkQty) + (candyPrice * candyQty)
+                        + (hotDogPrice * hotDogQty) + (hamburgerPrice * hamburgerQty);
+
+        double tax = subtotal * taxRate;
+
+        
+        int discountPercent = (int)(Math.random() * 10) + 1;
+        double discountAmount = subtotal * discountPercent / 100;
+
+        double total = subtotal + tax - discountAmount;
+
+        
+        String receiptNumber = initials.substring(0, Math.min(3, initials.length())) + "-" + ((int)(Math.random() * 900) + 100);
+
+        
+        System.out.println("\n**************************************");
+        System.out.println("* " + initials + " Snack Bar *");
+        System.out.println("* Receipt #: " + receiptNumber + "          *");
+        System.out.println("**************************************");
+        System.out.println("* Item           Qty     Price     Total *");
+        System.out.println("**************************************");
+        System.out.println("* Drink           " + drinkQty + "      $" + drinkPrice + "     $" + (drinkQty * drinkPrice) + " *");
+        System.out.println("* Candy           " + candyQty + "      $" + candyPrice + "     $" + (candyQty * candyPrice) + " *");
+        System.out.println("* Hot Dog         " + hotDogQty + "      $" + hotDogPrice + "     $" + (hotDogQty * hotDogPrice) + " *");
+        System.out.println("* Hamburger       " + hamburgerQty + "      $" + hamburgerPrice + "     $" + (hamburgerQty * hamburgerPrice) + " *");
+        System.out.println("**************************************");
+        System.out.printf("* Subtotal:                 ", subtotal);
+        System.out.printf("* Tax :               ", taxRate * 100, tax);
+        System.out.printf("* Discount :            ", discountPercent, discountAmount);
+        System.out.printf("* Total:                    ", total);
+        System.out.println("**************************************");
+
+        input.close();
+    }
+}
