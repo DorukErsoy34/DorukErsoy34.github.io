@@ -430,6 +430,37 @@ while (value != -1) {
     System.out.print("Enter a number (-1 to stop): ");
     value = input.nextInt();
 }
+2.10 Implementing String Algorithms
+String algorithms involve processing or analyzing text, e.g., searching, replacing, counting, or pattern matching.
+Common operations:
+charAt(index) → get character at position
+length() → number of characters
+substring(start, end) → extract part of a string
+indexOf(substring) → find position of substring
+equals() → compare strings
+Example: Count vowels or check if a substring exists in a string.
+Efficient string algorithms avoid repeated concatenation or unnecessary loops.
+2.11 Nested Iteration
+Nested iteration = a loop inside another loop.
+Outer loop controls overall repetitions, inner loop handles sub-tasks.
+Commonly used for:
+2D arrays or matrices
+Printing patterns (e.g., triangles, squares)
+String processing (looping over each character in multiple strings)
+Example:
+for (int i = 1; i <= 3; i++) {
+    for (int j = 1; j <= 3; j++) {
+        System.out.println(i + "," + j);
+    }
+}
+2.12 Informal Run-Time Analysis
+Estimates how long an algorithm takes without precise formulas.
+Focus: How time grows as input size grows (efficiency).
+Common patterns:
+Loops → linear (O(n)), nested loops → quadratic (O(n^2))
+Simple operations inside loops → constant time (O(1))
+Helps compare algorithms and anticipate performance problems.
+Example: Counting vowels in a string of length n → O(n) time. Nested loop over n x n → O(n^2).
 </pre>
 
     <p>video summery of unit 1 & 2</p>
