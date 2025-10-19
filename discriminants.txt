@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class MyProgram {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("x^3 + b x^2 + c x + d");
+        System.out.print("Enter b: ");
+        int b = scanner.nextInt();
+        System.out.print("Enter c: ");
+        int c = scanner.nextInt();
+        System.out.print("Enter d: ");
+        int d = scanner.nextInt();
+
+        double discriminant = b*b*c*c - 4*c*c*c - 4*b*b*b*d - 27*d*d + 18*b*c*d;
+        System.out.println(discriminant);
+    }
+}
