@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class MyProgram {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter first parameter for x: ");
+        int x1 = scanner.nextInt();
+        System.out.print("Enter first parameter for y: ");
+        int y1 = scanner.nextInt();
+        System.out.print("Enter second parameter for x: ");
+        int x2 = scanner.nextInt();
+        System.out.print("Enter second parameter for y: ");
+        int y2 = scanner.nextInt();
+
+        int q = (x2 - x1) * (x2 - x1);
+        int p = (y2 - y1) * (y2 - y1);
+        int a = q + p;
+        double euclideanD = Math.sqrt(a);
+
+        System.out.println(euclideanD);
+    }
+}
