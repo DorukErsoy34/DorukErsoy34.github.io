@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class MyProgram {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Which month (use 1 for January, 2 for February, etc.): ");
+        int m = scanner.nextInt();
+        
+        if (m > 12) {
+            System.out.println("There are no months after 12.");
+            System.exit(0); 
+        }
+
+        System.out.println("Which day: ");
+        int d = scanner.nextInt();
+        System.out.println("Which year: ");
+        int y = scanner.nextInt();
+
+        double y0 = y - (14 - m) / 12;
+        double x = y0 + y0 / 4 - y0 / 100 + y0 / 400;
+        double m0 = m + 12 * ((14 - m) / 12) - 2;
+        double d0 = (d + x + 31 * m0 / 12) % 7;
+        int weekday = (int) d0;
+
+        System.out.println(weekday);
+    }
+}
+   
