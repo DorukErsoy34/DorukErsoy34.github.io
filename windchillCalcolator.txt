@@ -1,0 +1,24 @@
+
+import java.util.Scanner;
+
+public class WindChillCalculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter temperature (°F): ");
+        double t = scanner.nextDouble();
+        if (Math.abs(t) > 50) {
+            System.out.println("Temperature must be ≤ 50°F in magnitude.");
+            return;
+        }
+        System.out.print("Enter wind speed (mph): ");
+        double v = scanner.nextDouble();
+        if (v < 3 || v > 120) {
+            System.out.println("Wind speed must be between 3 and 120 mph.");
+            return;
+        }
+
+        double w = 35.74 + 0.6215 * t + (0.4275 * t - 35.75) * Math.pow(v, 0.16);
+        System.out.printf("Wind chill: %.2f°F%n", w);
+    }
+}
