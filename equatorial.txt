@@ -1,0 +1,28 @@
+  
+
+import java.util.Scanner;
+
+public class MyProgram {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter declination δ (radians): ");
+        double dec = scanner.nextDouble();
+        System.out.println("Enter hour angle H (radians): ");
+        double angle = scanner.nextDouble();
+        System.out.println("Enter latitude φ (radians): ");
+        double lat = scanner.nextDouble();
+
+        double altitude = Math.asin(Math.sin(lat) * Math.sin(dec) +
+                                    Math.cos(lat) * Math.cos(dec) * Math.cos(angle));
+
+        double azimuth  = Math.acos((Math.cos(lat) * Math.sin(dec) -
+                                     Math.sin(lat) * Math.cos(dec) * Math.cos(angle)) /
+                                     Math.cos(altitude));
+
+        System.out.println("Position in horizontal coordinates:");
+        System.out.print(altitude + ", ");
+        System.out.print(azimuth);
+    }
+}
+  
