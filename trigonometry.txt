@@ -1,0 +1,25 @@
+public class Trig {
+    public static void main(String[] args) {
+        if (args.length != 1) {
+            System.out.println("Usage: java Trig ");
+            return;
+        }
+
+        double deg = Double.parseDouble(args[0]);
+        double rad = Math.toRadians(deg);
+
+        double s = Math.sin(rad);
+        double c = Math.cos(rad);
+        double t = Math.tan(rad);
+
+        System.out.println("Angle (deg): " + deg);
+        System.out.println("Angle (rad): " + rad);
+        System.out.println("sin(theta): " + s);
+        System.out.println("cos(theta): " + c);
+        System.out.println("tan(theta): " + t);
+
+        double identity = s*s + c*c; // should be ~1
+        System.out.println("sin^2 + cos^2 = " + identity);
+    }
+}
+   
