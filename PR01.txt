@@ -1,0 +1,29 @@
+import java.util.Scanner;
+public class MyProgram
+{
+    public static void main(String[] args)
+    {
+      Scanner input = new Scanner(System.in);
+       long n = 87539319;
+       
+       for (long a = 1; a*a*a <= n; a++) {
+            for (long b = a + 1; a*a*a + b*b*b <= n; b++) {
+
+                long sum1 = a*a*a + b*b*b;
+
+                for (long c = 1; c*c*c <= n; c++) {
+                    for (long d = c + 1; c*c*c + d*d*d <= n; d++) {
+
+                        long sum2 = c*c*c + d*d*d;
+                            if (sum1 == sum2 && a != c && a != d && b != c && b != d) {
+
+                            System.out.println(sum1 + " = "
+                                    + a + "^3 + " + b + "^3 = "
+                                    + c + "^3 + " + d + "^3");
+                        }
+                    }
+                }
+            }
+        }
+    }
+}//
