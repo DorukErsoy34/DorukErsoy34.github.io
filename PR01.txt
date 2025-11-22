@@ -17,9 +17,7 @@ public class MyProgram
                         long sum2 = c*c*c + d*d*d;
                             if (sum1 == sum2 && a != c && a != d && b != c && b != d) {
 
-                            System.out.println(sum1 + " = "
-                                    + a + "^3 + " + b + "^3 = "
-                                    + c + "^3 + " + d + "^3");
+                            System.out.println(sum1 + " = " + a + "^3 + " + b + "^3 = " + c + "^3 + " + d + "^3");
                         }
                     }
                 }
