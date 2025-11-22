@@ -1,0 +1,91 @@
+Sin.java:
+--------
+import java.util.Scanner;
+public class Sin {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter x (in radians): ");
+        double x = input.nextDouble();
+
+        System.out.print("Enter number of terms: ");
+        int n = input.nextInt();
+
+        double sin = 0;
+        double term;
+        int sign = 1;
+
+        for (int i = 1; i <= n; i++) {
+            int power = 2*i - 1;     // 1, 3, 5, 7, ...
+            term = sign * power(x, power) / factorial(power);
+            sin += term;
+            sign *= -1;             // alternates + and -
+        }
+
+        System.out.println("sin(" + x + ") ≈ " + sin);
+    }
+
+    // compute x^n
+    public static double power(double base, int exp) {
+        double result = 1;
+        for (int i = 1; i <= exp; i++) {
+            result *= base;
+        }
+        return result;
+    }
+
+    // compute n!
+    public static long factorial(int n) {
+        long f = 1;
+        for (int i = 2; i <= n; i++) {
+            f *= i;
+        }
+        return f;
+    }
+}
+
+Cos.java:
+--------
+import java.util.Scanner;
+
+public class Cos {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter x (in radians): ");
+        double x = input.nextDouble();
+
+        System.out.print("Enter number of terms: ");
+        int n = input.nextInt();
+
+        double cos = 0;
+        double term;
+        int sign = 1;
+
+        for (int i = 0; i < n; i++) {
+            int power = 2*i;         // 0, 2, 4, 6, ...
+            term = sign * power(x, power) / factorial(power);
+            cos += term;
+            sign *= -1;             // alternates + and -
+        }
+
+        System.out.println("cos(" + x + ") ≈ " + cos);
+    }
+
+    public static double power(double base, int exp) {
+        double result = 1;
+        for (int i = 1; i <= exp; i++) {
+            result *= base;
+        }
+        return result;
+    }
+
+    public static long factorial(int n) {
+        long f = 1;
+        for (int i = 2; i <= n; i++) {
+            f *= i;
+        }
+        return f;
+    }
+}
+
