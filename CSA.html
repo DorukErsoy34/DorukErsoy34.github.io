@@ -461,7 +461,82 @@ Loops → linear (O(n)), nested loops → quadratic (O(n^2))
 Simple operations inside loops → constant time (O(1))
 Helps compare algorithms and anticipate performance problems.
 Example: Counting vowels in a string of length n → O(n) time. Nested loop over n x n → O(n^2).
-</pre>
+3.1 Abstraction and Program Design 
+Abstraction = hiding unnecessary details and showing only what matters.
+Used to simplify complex problems.
+Examples: using a method without knowing its code; using a class without knowing its internal workings.
+Helps make programs easier to design, read, test, and modify.
+Good program design uses:
+Modularity (split into small pieces)
+Clear purpose for each method/class
+Reusability of code
+3.2 Impact of Program Design
+Good design → fewer bugs, easier debugging, and higher performance.
+Poor design → messy code, bugs, duplication, difficulty scaling.
+Readability is often more important than clever tricks.
+Helps teams collaborate and update code easily.
+Leads to robust, maintainable, and extendable programs.
+3.3 Anatomy of a Class
+Every class has:
+Fields/Instance Variables → store object data
+Constructors → create objects
+Methods → define behaviors
+Access Modifiers (public, private) → control visibility
+Optional: static variables, static methods, helper methods
+Example skeleton:
+public class Car {
+    private int speed;       // field
+    public Car(int s) {      // constructor
+        speed = s;
+    }
+    public void drive() {    // method
+        System.out.println("Driving...");
+    }
+}
+3.4 Constructors
+Special methods that run when an object is created using new.
+Same name as the class.
+No return type, not even void.
+Used to initialize fields.
+Types:
+Default constructor (no parameters)
+Parameterized constructor (sets initial values)
+Can be overloaded (multiple constructors with different parameters)
+3.5 Methods: How to Write Them
+A method contains:
+Return type
+Name
+Parameters (optional)
+Body (code inside)
+Example:
+public int add(int a, int b) {
+    return a + b;
+}
+
+Guidelines:
+Method name should describe the action.
+One method = one clear purpose.
+Use return to send back results.
+3.6 Methods: Passing and Returning References of an Object
+In Java, objects are passed by reference value.
+When you pass an object as a parameter, the method can change its fields.
+Example:
+public void grow(Person p) {
+    p.age++;  // modifies original object
+}
+Methods can also return an object, allowing chaining and flexible designs.
+3.7 Class Variables and Methods (static)
+Static variables → shared by all objects of the class.
+Example: static int count;
+Static methods → belong to the class, not to an object.
+Example: Math.random()
+Key uses:
+Keeping track of shared data (e.g., number of objects created)
+Utility methods that don’t depend on object state
+Rules:
+Static methods cannot use non-static fields (because they don't belong to an object).
+
+    </pre>
 
     <p>video summery of unit 1 & 2</p>
             
