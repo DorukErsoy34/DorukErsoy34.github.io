@@ -1,0 +1,58 @@
+public class Projectile {
+    
+    // Convert mph to meters/second
+    public static double mphToMps(double mph) {
+        return mph * 0.44704;
+    }
+
+    // Simulate distance for a given angle
+    public static double simulate(double angleDegrees) {
+        double g = 9.8;
+        double v0 = 500; // initial speed (m/s) — adjust if needed
+        double wind = mphToMps(20); // 20 mph wind
+        
+        double angle = Math.toRadians(angleDegrees);
+        
+        double vx = v0 * Math.cos(angle) + wind;
+        double vy = v0 * Math.sin(angle);
+
+        double x = 0.0;
+        double y = 0.0;
+
+        double t = 0.0;
+        double dt = 0.1; // time step
+
+        while (y >= 0) {
+            x = vx * t;
+            y = vy * t - 0.5 * g * t * t;
+            t += dt;
+        }
+
+        return x;
+    }
+
+    public static void main(String[] args) {
+        double target = 160934; // 100 miles in meters
+        double bestAngle = 0;
+        double bestError = Double.MAX_VALUE;
+
+        // Try all angles from 1 to 89 degrees
+        for (double angle = 5; angle <= 85; angle += 0.5) {
+            double distance = simulate(angle);
+            double error = Math.abs(distance - target);
+
+            System.out.println("Angle: " + angle + " degrees → Distance: " + distance);
+
+            if (error < bestError) {
+                bestError = error;
+                bestAngle = angle;
+            }
+        }
+
+        System.out.println("\n===============================");
+        System.out.println("BEST ANGLE TO HIT 100 MILES:");
+        System.out.println(bestAngle + " degrees");
+        System.out.println("Distance error: " + bestError + " meters");
+        System.out.println("===============================");
+    }
+}
