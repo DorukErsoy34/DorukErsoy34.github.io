@@ -1,0 +1,35 @@
+class UPC {
+    public static void main(String[] args) {
+        if (args.length != 1) {
+            System.out.println("Usage: java MyProgram <11-digit number>");
+            return;
+        }
+
+        String upcStr = args[0];
+
+        if (upcStr.length() != 11) {
+            System.out.println("Please enter exactly 11 digits.");
+            return;
+        }
+
+        int sumOdd = 0;   // sum of digits in odd positions
+        int sumEven = 0;  // sum of digits in even positions
+
+        for (int i = 0; i < 11; i++) {
+            int digit = upcStr.charAt(i) - '0';
+            if ((i % 2) == 0) {
+                sumOdd += digit;
+            } else {
+                sumEven += digit;
+            }
+        }
+
+        // Compute check digit
+        int total = sumOdd + 3 * sumEven;
+        int checkDigit = (10 - (total % 10)) % 10;
+
+        String fullUPC = upcStr + checkDigit;
+
+        System.out.println("Full UPC code: " + fullUPC);
+    }
+}
