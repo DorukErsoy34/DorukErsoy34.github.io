@@ -1,0 +1,63 @@
+import java.util.Scanner;
+
+public class BlackjackDouble {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter first player card (1-10): ");
+        int x = input.nextInt();
+
+        System.out.print("Enter second player card (1-10): ");
+        int y = input.nextInt();
+
+        System.out.print("Enter dealer's face-up card (1-10): ");
+        int z = input.nextInt();
+
+        // Check for pair (splitting)
+        if (x == y) {
+            switch (x) {
+                case 1: // Pair of aces
+                case 8: // Pair of 8s
+                    System.out.println("Split");
+                    return;
+                case 10: // Pair of 10s
+                    System.out.println("Stand");
+                    return;
+                default:
+                    System.out.println("Hit");
+                    return;
+            }
+        }
+
+        int total = x + y;
+
+        // Check for doubling (simple strategy)
+        if ((total == 9 && z >= 3 && z <= 6) ||
+            (total == 10 && z >= 2 && z <= 9) ||
+            (total == 11 && z >= 2 && z <= 10)) {
+            System.out.println("Double");
+            return;
+        }
+
+        // Basic strategy for totals
+        if (total >= 17) {
+            System.out.println("Stand");
+        } else if (total >= 13 && total <= 16) {
+            if (z >= 2 && z <= 6) {
+                System.out.println("Stand");
+            } else {
+                System.out.println("Hit");
+            }
+        } else if (total == 12) {
+            if (z >= 4 && z <= 6) {
+                System.out.println("Stand");
+            } else {
+                System.out.println("Hit");
+            }
+        } else { // totals 5-11 not eligible for double
+            System.out.println("Hit");
+        }
+
+        input.close();
+    }
+}
