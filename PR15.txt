@@ -1,0 +1,46 @@
+public class StandardNormalStats {
+    public static void main(String[] args) {
+        if (args.length != 1) {
+            System.out.println("Usage: java StandardNormalStats N");
+            return;
+        }
+
+        int N = Integer.parseInt(args[0]);
+        double[] numbers = new double[N];
+        double sum = 0.0;
+
+        // Generate N standard normal random variables using Box-Muller
+        for (int i = 0; i < N; i += 2) {
+            double u1 = Math.random();
+            double u2 = Math.random();
+
+            double z0 = Math.sqrt(-2 * Math.log(u1)) * Math.cos(2 * Math.PI * u2);
+            double z1 = Math.sqrt(-2 * Math.log(u1)) * Math.sin(2 * Math.PI * u2);
+
+            numbers[i] = z0;
+            sum += z0;
+
+            if (i + 1 < N) {
+                numbers[i + 1] = z1;
+                sum += z1;
+            }
+        }
+
+        double mean = sum / N;
+
+        // Compute sample standard deviation
+        double sumSquares = 0.0;
+        for (int i = 0; i < N; i++) {
+            sumSquares += (numbers[i] - mean) * (numbers[i] - mean);
+        }
+        double sampleStdDev = Math.sqrt(sumSquares / (N - 1));
+
+        // Print results
+        System.out.println("Generated standard normal variables:");
+        for (int i = 0; i < N; i++) {
+            System.out.printf("%.5f ", numbers[i]);
+        }
+        System.out.println("\nAverage: " + mean);
+        System.out.println("Sample standard deviation: " + sampleStdDev);
+    }
+}
