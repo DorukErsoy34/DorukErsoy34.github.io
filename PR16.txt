@@ -1,0 +1,27 @@
+public class LoadedDice {
+    public static void main(String[] args) {
+        int[] A = {2, 6, 7};
+        int[] B = {1, 5, 9};
+        int[] C = {3, 4, 8};
+
+        System.out.println("Probability A beats B: " + probability(A, B));
+        System.out.println("Probability B beats C: " + probability(B, C));
+        System.out.println("Probability C beats A: " + probability(C, A));
+    }
+
+    // Function to calculate probability that die1 beats die2
+    public static double probability(int[] die1, int[] die2) {
+        int wins = 0;
+        int total = die1.length * die2.length;
+
+        for (int i = 0; i < die1.length; i++) {
+            for (int j = 0; j < die2.length; j++) {
+                if (die1[i] > die2[j]) {
+                    wins++;
+                }
+            }
+        }
+
+        return (double) wins / total;
+    }
+}
