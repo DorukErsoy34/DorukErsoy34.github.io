@@ -1,0 +1,35 @@
+public class ISBN2 {
+    public static void main(String[] args) {
+        if (args.length != 1) {
+            System.out.println("Usage: java ISBN2 <9-digit number>");
+            return;
+        }
+
+        String numStr = args[0];
+        if (numStr.length() != 9) {
+            System.out.println("Please enter exactly 9 digits.");
+            return;
+        }
+
+        int sum = 0;
+
+        // Compute weighted sum for first 9 digits
+        for (int i = 0; i < 9; i++) {
+            int digit = numStr.charAt(i) - '0';
+            sum += digit * (i + 1);
+        }
+
+        // Compute checksum
+        int check = sum % 11;
+        String checkDigit = (check == 10) ? "X" : String.valueOf(check);
+
+        // Format ISBN: e.g., 0-201-31452-5
+        // We'll split as: first digit - next 3 digits - next 5 digits - check digit
+        String formattedISBN = numStr.substring(0,1) + "-" +
+                               numStr.substring(1,4) + "-" +
+                               numStr.substring(4,9) + "-" +
+                               checkDigit;
+
+        System.out.println("Formatted ISBN: " + formattedISBN);
+    }
+}
