@@ -1,0 +1,35 @@
+public class Euler {
+    public static void main(String[] args) {
+
+        // Loop over e from a small number up to a reasonable max
+        for (long e = 10; e <= 200; e++) {
+            long e5 = e * e * e * e * e;
+
+            // Loop for a, b, c, d (all positive integers less than or equal to e)
+            for (long a = 1; a <= e; a++) {
+                long a5 = a * a * a * a * a;
+
+                for (long b = a; b <= e; b++) {  // b >= a to avoid duplicates
+                    long b5 = b * b * b * b * b;
+
+                    for (long c = b; c <= e; c++) {  // c >= b
+                        long c5 = c * c * c * c * c;
+
+                        for (long d = c; d <= e; d++) {  // d >= c
+                            long d5 = d * d * d * d * d;
+
+                            // Check if the sum of 4 fifth powers equals e^5
+                            if (a5 + b5 + c5 + d5 == e5) {
+                                System.out.println("Solution found:");
+                                System.out.println("a=" + a + ", b=" + b + ", c=" + c + ", d=" + d + ", e=" + e);
+                                return; // stop after finding the first solution
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        System.out.println("No solution found in this range.");
+    }
+}
