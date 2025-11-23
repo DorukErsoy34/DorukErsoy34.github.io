@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class MonteHall {
+
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+        System.out.print("How many simulations? ");
+        int n = input.nextInt();
+
+        int winsIfStay = 0;
+        int winsIfSwitch = 0;
+
+        for (int i = 0; i < n; i++) {
+
+            int prizeDoor = (int)(Math.random() * 3);
+            int choice = (int)(Math.random() * 3);
+
+            int hostDoor;
+            do {
+                hostDoor = (int)(Math.random() * 3);
+            } while (hostDoor == choice || hostDoor == prizeDoor);
+
+            int switchDoor = 3 - choice - hostDoor;
+
+            if (choice == prizeDoor) winsIfStay++;
+            if (switchDoor == prizeDoor) winsIfSwitch++;
+        }
+
+        System.out.println("\nAfter " + n + " simulations:");
+        System.out.println("Stay win rate:   " + (100.0 * winsIfStay / n) + "%");
+        System.out.println("Switch win rate: " + (100.0 * winsIfSwitch / n) + "%");
+    }
+}
