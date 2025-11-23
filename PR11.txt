@@ -1,0 +1,36 @@
+public class QuarterbackRating {
+    public static void main(String[] args) {
+        if (args.length != 5) {
+            System.out.println("Please provide 5 inputs: A B C D E");
+            System.out.println("A = completed passes, B = pass attempts, C = passing yards, D = touchdowns, E = interceptions");
+            return;
+        }
+
+        // Read command-line arguments
+        double A = Double.parseDouble(args[0]);
+        double B = Double.parseDouble(args[1]);
+        double C = Double.parseDouble(args[2]);
+        double D = Double.parseDouble(args[3]);
+        double E = Double.parseDouble(args[4]);
+
+        // Constants
+        double MAX_COMPONENT = 475.0 / 12.0;  // max value for each component
+
+        // Compute components
+        double W = 250.0 / 3.0 * ((A / B) - 0.3);
+        double X = 25.0 / 6.0 * ((C / B) - 3.0);
+        double Y = 1000.0 / 3.0 * (D / B);
+        double Z = 1250.0 / 3.0 * (0.095 - (E / B));
+
+        // Clamp each component between 0 and MAX_COMPONENT
+        W = Math.max(0, Math.min(W, MAX_COMPONENT));
+        X = Math.max(0, Math.min(X, MAX_COMPONENT));
+        Y = Math.max(0, Math.min(Y, MAX_COMPONENT));
+        Z = Math.max(0, Math.min(Z, MAX_COMPONENT));
+
+        // Compute quarterback rating
+        double rating = W + X + Y + Z;
+
+        System.out.println("Quarterback Rating: " + rating);
+    }
+}
