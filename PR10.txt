@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class GymnasticsScorer {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter score 1: ");
+        double num1 = input.nextDouble();
+        System.out.print("Enter score 2: ");
+        double num2 = input.nextDouble();
+        System.out.print("Enter score 3: ");
+        double num3 = input.nextDouble();
+        System.out.print("Enter score 4: ");
+        double num4 = input.nextDouble();
+        System.out.print("Enter score 5: ");
+        double num5 = input.nextDouble();
+        System.out.print("Enter score 6: ");
+        double num6 = input.nextDouble();
+
+        // Find min and max manually
+        double min = Math.min(Math.min(Math.min(num1, num2), Math.min(num3, num4)),
+                              Math.min(num5, num6));
+        double max = Math.max(Math.max(Math.max(num1, num2), Math.max(num3, num4)),
+                              Math.max(num5, num6));
+
+        // Compute sum and subtract min and max
+        double sum = num1 + num2 + num3 + num4 + num5 + num6 - min - max;
+
+        // Compute average
+        double avg = sum / 4.0;
+
+        System.out.println("The average of the scores is: " + avg);
+
+        input.close();
+    }
+}
