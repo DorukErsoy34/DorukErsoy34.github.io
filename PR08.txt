@@ -1,0 +1,48 @@
+import java.util.Random;
+
+public class BoysAndGirls {
+    public static void main(String[] args) {
+        Random rand = new Random();
+
+        int numSimulations = 10000;
+        int totalChildren = 0;
+
+        int count2 = 0;
+        int count3 = 0;
+        int count4 = 0;
+        int count5plus = 0;
+
+        for (int sim = 0; sim < numSimulations; sim++) {
+            int boys = 0;
+            int girls = 0;
+            int children = 0;
+
+            // Keep having children until at least one boy AND one girl
+            while (boys == 0 || girls == 0) {
+                children++;
+                if (rand.nextBoolean()) {  // true = boy, false = girl
+                    boys++;
+                } else {
+                    girls++;
+                }
+            }
+
+            totalChildren += children;
+
+            // Update frequency counts
+            if (children == 2) count2++;
+            else if (children == 3) count3++;
+            else if (children == 4) count4++;
+            else count5plus++;
+        }
+
+        double averageChildren = totalChildren / (double) numSimulations;
+
+        System.out.println("Average number of children: " + averageChildren);
+        System.out.println("Frequency counts:");
+        System.out.println("2 children: " + count2);
+        System.out.println("3 children: " + count3);
+        System.out.println("4 children: " + count4);
+        System.out.println("5 or more children: " + count5plus);
+    }
+}
