@@ -1,0 +1,57 @@
+import java.util.Scanner;
+
+public class RGBtoHSV {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input RGB values (0–255)
+        System.out.print("Enter Red (0-255): ");
+        int r = sc.nextInt();
+        System.out.print("Enter Green (0-255): ");
+        int g = sc.nextInt();
+        System.out.print("Enter Blue (0-255): ");
+        int b = sc.nextInt();
+
+        // Normalize to 0–1
+        double R = r / 255.0;
+        double G = g / 255.0;
+        double B = b / 255.0;
+
+        // Find max, min, delta
+        double max = Math.max(R, Math.max(G, B));
+        double min = Math.min(R, Math.min(G, B));
+        double delta = max - min;
+
+        // Brightness (Value)
+        double brightness = max;
+
+        // Saturation
+        double saturation = (max == 0) ? 0 : delta / max;
+
+        // Hue calculation
+        double hue;
+        if (delta == 0) {
+            hue = 0; // grayscale
+        } else if (max == R) {
+            hue = 60 * (((G - B) / delta) % 6);
+        } else if (max == G) {
+            hue = 60 * (((B - R) / delta) + 2);
+        } else { // max == B
+            hue = 60 * (((R - G) / delta) + 4);
+        }
+
+        if (hue < 0) hue += 360;
+
+        // Scale to 0–255
+        int H = (int)(hue * 255 / 360);
+        int S = (int)(saturation * 255);
+        int V = (int)(brightness * 255);
+
+        System.out.println("HSB/HSV values (0-255 scale):");
+        System.out.println("Hue: " + H);
+        System.out.println("Saturation: " + S);
+        System.out.println("Brightness: " + V);
+
+        sc.close();
+    }
+}
