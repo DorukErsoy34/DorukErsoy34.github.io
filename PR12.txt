@@ -1,0 +1,65 @@
+import java.util.*;
+
+public class DecimalExpansion {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Read numerator and denominator
+        System.out.print("Enter numerator (p): ");
+        int p = sc.nextInt();
+        System.out.print("Enter denominator (q): ");
+        int q = sc.nextInt();
+
+        if (q == 0) {
+            System.out.println("Error: Division by zero!");
+            sc.close();
+            return;
+        }
+
+        // Handle negative numbers
+        boolean negative = false;
+        if ((p < 0 && q > 0) || (p > 0 && q < 0)) {
+            negative = true;
+        }
+        p = Math.abs(p);
+        q = Math.abs(q);
+
+        // Integer part
+        int integerPart = p / q;
+        int remainder = p % q;
+
+        if (remainder == 0) {
+            System.out.println((negative ? "-" : "") + integerPart);
+            sc.close();
+            return;
+        }
+
+        StringBuilder decimal = new StringBuilder();
+        Map<Integer, Integer> remainderPositions = new HashMap<>();
+        int pos = 0;
+
+        while (remainder != 0) {
+            if (remainderPositions.containsKey(remainder)) {
+                // repeating cycle detected
+                int repeatStart = remainderPositions.get(remainder);
+                String nonRepeating = decimal.substring(0, repeatStart);
+                String repeating = decimal.substring(repeatStart);
+                String result = (negative ? "-" : "") + integerPart + "." + nonRepeating + "(" + repeating + ")";
+                System.out.println(result);
+                sc.close();
+                return;
+            }
+
+            remainderPositions.put(remainder, pos);
+            remainder *= 10;
+            int digit = remainder / q;
+            decimal.append(digit);
+            remainder = remainder % q;
+            pos++;
+        }
+
+        // Terminating decimal
+        System.out.println((negative ? "-" : "") + integerPart + "." + decimal.toString());
+        sc.close();
+    }
+}
