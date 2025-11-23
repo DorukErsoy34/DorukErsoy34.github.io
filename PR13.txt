@@ -1,0 +1,38 @@
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
+public class Friday13thGap {
+    public static void main(String[] args) {
+        int maxGap = 0;           // maximum days without Friday the 13th
+        int lastFriday13th = -1;  // store the day count of last Friday the 13th
+
+        // Use a counter for days since start
+        int dayCount = 0;
+
+        // Loop through 400 years (Gregorian calendar repeats every 400 years)
+        for (int year = 0; year < 400; year++) {
+            for (int month = 0; month < 12; month++) {
+                Calendar cal = new GregorianCalendar(year, month, 13);
+                int dayOfWeek = cal.get(Calendar.DAY_OF_WEEK); // 1=Sunday, 7=Saturday
+
+                if (dayOfWeek == Calendar.FRIDAY) {
+                    // If this is the first Friday the 13th
+                    if (lastFriday13th != -1) {
+                        int gap = dayCount - lastFriday13th;
+                        if (gap > maxGap) {
+                            maxGap = gap;
+                        }
+                    }
+                    lastFriday13th = dayCount;
+                }
+
+                // Add days in this month to dayCount
+                int daysInMonth = cal.getActualMaximum(Calendar.DAY_OF_MONTH);
+                dayCount += daysInMonth;
+            }
+        }
+
+        // Fixed println line
+        System.out.println("Maximum consecutive days without a Friday the 13th: " + maxGap);
+    }
+}
