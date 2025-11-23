@@ -1,0 +1,25 @@
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
+public class January1Days {
+    public static void main(String[] args) {
+        int[] counts = new int[8]; // Calendar.DAY_OF_WEEK ranges from 1 (Sunday) to 7 (Saturday)
+
+        // Loop over 400 years
+        for (int year = 0; year < 400; year++) {
+            Calendar cal = new GregorianCalendar(year, Calendar.JANUARY, 1);
+            int dayOfWeek = cal.get(Calendar.DAY_OF_WEEK);
+            counts[dayOfWeek]++;
+        }
+
+        // Print results
+        System.out.println("January 1 falls on:");
+        System.out.println("Sunday: " + counts[Calendar.SUNDAY] + " times");
+        System.out.println("Monday: " + counts[Calendar.MONDAY] + " times");
+        System.out.println("Tuesday: " + counts[Calendar.TUESDAY] + " times");
+        System.out.println("Wednesday: " + counts[Calendar.WEDNESDAY] + " times");
+        System.out.println("Thursday: " + counts[Calendar.THURSDAY] + " times");
+        System.out.println("Friday: " + counts[Calendar.FRIDAY] + " times");
+        System.out.println("Saturday: " + counts[Calendar.SATURDAY] + " times");
+    }
+}
