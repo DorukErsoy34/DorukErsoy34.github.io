@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class StudyTimer {
+
+    // -------- Fields --------
+    private int focusMinutes;
+    private int breakMinutes;
+
+    // -------- Constructor --------
+    public StudyTimer(int focusMinutes, int breakMinutes) {
+        this.focusMinutes = focusMinutes;
+        this.breakMinutes = breakMinutes;
+    }
+
+    // -------- Focus simulation --------
+    public void focus() {
+        for(int i = focusMinutes; i > 0; i--) {
+            System.out.println("Focus: " + i + " minutes left");
+        }
+    }
+
+    // -------- Break simulation --------
+    public void breakM() {
+        for(int i = breakMinutes; i > 0; i--) {
+            System.out.println("Break: " + i + " minutes left");
+        }
+    }
+
+    // -------- Main method --------
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        // Create object
+        StudyTimer timer = new StudyTimer(30, 10);
+
+        timer.focus();
+        timer.breakM();
+    }
+
+}
+//
