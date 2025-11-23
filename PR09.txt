@@ -1,0 +1,80 @@
+import java.util.Scanner;
+
+public class NumberToEnglish {
+
+    private static final String[] BELOW_TWENTY = {
+        "zero", "one", "two", "three", "four", "five", "six", "seven",
+        "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen",
+        "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"
+    };
+
+    private static final String[] TENS = {
+        "", "", "twenty", "thirty", "forty", "fifty", "sixty",
+        "seventy", "eighty", "ninety"
+    };
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter an integer between -999999999 and 999999999: ");
+        int num = sc.nextInt();
+
+        if (num < -999_999_999 || num > 999_999_999) {
+            System.out.println("Number out of range");
+            sc.close();
+            return;
+        }
+
+        if (num == 0) {
+            System.out.println("zero");
+            sc.close();
+            return;
+        }
+
+        String result = "";
+
+        if (num < 0) {
+            result += "negative ";
+            num = -num;
+        }
+
+        // Millions
+        if (num / 1_000_000 > 0) {
+            result += convertThreeDigits(num / 1_000_000) + " million ";
+            num %= 1_000_000;
+        }
+
+        // Thousands
+        if (num / 1_000 > 0) {
+            result += convertThreeDigits(num / 1_000) + " thousand ";
+            num %= 1_000;
+        }
+
+        // Hundreds and remainder
+        if (num > 0) {
+            result += convertThreeDigits(num);
+        }
+
+        System.out.println(result.trim());
+        sc.close();
+    }
+
+    private static String convertThreeDigits(int num) {
+        String str = "";
+
+        if (num >= 100) {
+            str += BELOW_TWENTY[num / 100] + " hundred ";
+            num %= 100;
+        }
+
+        if (num >= 20) {
+            str += TENS[num / 10] + " ";
+            num %= 10;
+        }
+
+        if (num > 0) {
+            str += BELOW_TWENTY[num] + " ";
+        }
+
+        return str.trim();
+    }
+}
