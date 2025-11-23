@@ -1,0 +1,32 @@
+public class ThueMorse {
+    public static void main(String[] args) {
+        if (args.length != 1) {
+            System.out.println("Usage: java ThueMorse n");
+            return;
+        }
+
+        int n = Integer.parseInt(args[0]);
+
+        String sequence = "0";  // Thue-Morse sequence of order 0
+
+        for (int i = 1; i <= n; i++) {
+            sequence += flipBits(sequence); // concatenate complement
+        }
+
+        System.out.println("Thue-Morse sequence of order " + n + ":");
+        System.out.println(sequence);
+    }
+
+    // Function to flip all bits in a string
+    public static String flipBits(String s) {
+        StringBuilder flipped = new StringBuilder();
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == '0') {
+                flipped.append('1');
+            } else {
+                flipped.append('0');
+            }
+        }
+        return flipped.toString();
+    }
+}
