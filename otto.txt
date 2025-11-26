@@ -1,0 +1,95 @@
+Otto.java:
+---------
+import java.util.Scanner;
+public class Otto
+{
+    public static void main(String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        System.out.println("the point in the x axis");
+        double x1 = input.nextDouble();
+        System.out.println("the point in the y axis");
+        double y1 = input.nextDouble();
+        System.out.println("first side length");
+        double s1 = input.nextDouble();
+        System.out.println("first side length");
+        double s2 = input.nextDouble();
+        System.out.println("first side length");
+        double s3 = input.nextDouble();
+        System.out.println("will it be filled");
+        boolean fill = input.nextBoolean();
+        
+        Shape triangle = new Shape(x1,y1,s1,s2,s3,fill);
+        Shape rectangle = new Shape(x1,y1,s1,s2,fill);
+        Shape sqare = new Shape(x1,y1,s1,s2,fill);
+        System.out.println(triangle);
+        
+        System.out.println("change side1 length");
+        double a1 = input.nextDouble();
+        System.out.println("change side2 length");
+        double a2 = input.nextDouble();
+        System.out.println(triangle.getSide1());
+        
+        
+    }
+}
+
+Shape.java:
+----------
+public class Shape 
+{  
+        private double x;
+        private double y;
+        private double side1;
+        private double side2;
+        private double side3;
+        private boolean isFilled;
+        
+        
+        public Shape(double x1,double y1, double s1, double s2,boolean fill){
+            this.x = x1;
+            this.y = y1;
+            this.side1 = s1;
+            this.side2 = s2;
+            this.isFilled = fill;
+        }
+        public Shape(double x1, double y1, double s1, double s2, double s3,boolean fill){
+            this.x = x1;
+            this.y = y1;
+            this.side1 = s1;
+            this.side2 = s2;
+            this.side3 = s3;
+            this.isFilled = fill;
+        }
+        public double getSide1(){
+            return side1;
+        }
+        public double getSide2(){
+            return side2;
+        }
+        public double getSide3(){
+            return side3;
+        }
+        public void changeSide(int a1, int a2){
+            side1 = a1;
+            side2 = a2;
+        }
+        public void changeisfilled(boolean b1){
+            isFilled = b1;
+        }
+        public boolean getisfilled(){
+            return isFilled;
+        }
+        public void rectangleY(int a){
+            side1*=a;
+            side2*=a;
+        }
+        public void rectangleA(int a){
+            side1*=a;
+        }
+        public void rectangleB(int a){
+            side2*=a;
+        }
+        
+}
+
