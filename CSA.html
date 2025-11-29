@@ -535,6 +535,24 @@ Keeping track of shared data (e.g., number of objects created)
 Utility methods that don’t depend on object state
 Rules:
 Static methods cannot use non-static fields (because they don't belong to an object).
+3.8 Scope and Access
+Scope determines where a variable or method can be used in a program.
+Types of scope:
+Local: inside a method/block – disappears after execution.
+Instance: belongs to an object – accessible via that object.
+Class (static): belongs to the class – shared by all objects.
+Access modifiers control visibility:
+public: accessible everywhere.
+private: accessible only within the class.
+protected: accessible in class, subclass, and same package.
+default (no modifier): accessible within the package.
+3.9 this Keyword
+Refers to the current object of the class.
+Common uses:
+Access instance variables when shadowed by local variables.
+Call another constructor in the same class (this(...)).
+Pass current object as a parameter.
+Helps avoid confusion between local and instance variables.
 
     </pre>
 
