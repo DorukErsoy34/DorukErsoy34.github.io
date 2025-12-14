@@ -124,6 +124,50 @@ public class Shape
         public int getradi(int a){
             return radious;
         }
+        public void setSide1(int s1) {
+            side1 = s1;
+        }
+        public void setSide2(int s2) {
+            side2 = s2;
+        }
+        public void setRadius(int r) {
+            radious = r;
+        }
+        public int squareArea() {
+            return side1 * side1;
+        }
+        public int rectangleArea() {
+            return side1 * side2;
+        }
+        public int rectanglePerimeter() {
+            return 2 * (side1 + side2);
+        }
+        public int getDiameter() {
+            return radious * 2;
+        }
+        public double circleCircumference() {
+            return 2 * Math.PI * radious;
+        }
+        public double circleArea() {
+            return Math.PI * radious * radious;
+        }
+        public boolean isSquare() {
+            return side1 == side2;
+        }
+        public boolean isValidRectangle() {
+            return side1 > 0 && side2 > 0;
+        }
+        public int maxSide() {
+            return Math.max(side1, side2);
+        }
+        public void resetShape() {
+            side1 = 0;
+            side2 = 0;
+            radious = 0;
+        }
+        public String getShapeInfo() {
+            return "side1=" + side1 + ", side2=" + side2 + ", radius=" + radious;
+        }
   
         
 }
