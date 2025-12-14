@@ -1,0 +1,179 @@
+Otto.java:
+---------
+import java.util.Scanner;
+public class Otto
+{
+    public static void main(String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        //creating the plane
+        coordinatePlane plane = new coordinatePlane(50,30);//x,y
+        
+        System.out.println("which shape do you want to create?");
+        String shape = input.next();
+        
+        if (shape.equals("rectangle")){//rectangle input
+        System.out.println("first side length");
+        int s1 = input.nextInt();
+        System.out.println("first side length");
+        int s2 = input.nextInt();
+        Shape rectangle = new Shape(plane,s1,s2);//rectangle construct
+        
+        }
+        else if (shape.equals("triangle")){//triangle input
+        System.out.println("height length");
+        int s1 = input.nextInt();
+        Shape triangle = new Shape(plane, s1, 0.5);//triangle construct
+        }
+        else if(shape.equals("circle")){//circle input
+        System.out.println("radious value");
+        double radious1 = input.nextDouble();
+        Shape circle = new Shape(plane,radious1);//cicle construct
+        
+        }
+        else if(shape.equals("square")){//square
+        System.out.println("first side length");
+        int s1 = input.nextInt();
+        Shape square = new Shape(plane, s1);//square construct
+        }
+        else if(shape.equals("D")){//D input
+        Shape D = new Shape(plane);//D construct
+        }
+        
+       plane.print();  
+       
+    }
+}
+
+Shape.java:
+----------
+public class Shape 
+{  
+        private int x;
+        private int y;
+        private int side1;
+        private int side2;
+        private int radious;
+        
+        public Shape (coordinatePlane plane, int s1,int s2){//rectangle
+            for(int y = 0; y < s2; y++){
+                for(int x = 0; x < s1; x++){
+                    plane.plot(x,y,'D');
+                }
+            }
+        }
+        
+        public Shape (coordinatePlane plane, int s1){//square
+            for(int y = 0; y < s1; y++){
+                for(int x = 0; x < s1; x++){
+                    plane.plot(x,y,'D');
+                }
+            }
+        }
+        
+
+        
+        public Shape(coordinatePlane plane, double radi){ // circle
+            int center = (int) radi;
+            for (int y = 0; y <= radi * 2; y++) {
+                int dy = Math.abs(y - center);
+                int halfWidth = (int) Math.sqrt(radi * radi - dy * dy);
+            for (int x = center - halfWidth; x <= center + halfWidth; x++) {
+                plane.plot(x, y, 'D');
+                }
+            }
+        }
+
+        public Shape(coordinatePlane plane){//D 
+           plane.plot(1,1,'D');
+           plane.plot(2,1,'D');
+           plane.plot(3,1,'D');
+           plane.plot(4,1,'D');
+           plane.plot(1,2,'D');
+           plane.plot(5,2,'D');
+           plane.plot(1,3,'D');
+           plane.plot(5,3,'D');
+           plane.plot(1,4,'D');
+           plane.plot(5,4,'D');
+           plane.plot(1,5,'D');
+           plane.plot(5,5,'D');
+           plane.plot(1,6,'D');
+           plane.plot(5,6,'D');
+           plane.plot(1,7,'D');
+           plane.plot(2,7,'D');
+           plane.plot(3,7,'D');
+           plane.plot(4,7,'D');
+           //manualy creates the letter capital D
+        }
+        public Shape (coordinatePlane plane, int s1,double unused){//triangle
+            int center = s1 - 1;
+            for (int y = 0; y < s1; y++) {
+                for (int x = center - y; x <= center + y; x++) {
+                    plane.plot(x, y, 'D');
+                }
+            }
+        }
+      
+       
+        public double getSide1(){
+            return side1;
+        }
+        public double getSide2(){
+            return side2;
+        }
+        public int getradi(int a){
+            return radious;
+        }
+  
+        
+}
+
+coordinatePlane.java:
+--------------------
+public class coordinatePlane {
+
+    private int width;      // number of X columns
+    private int height;     // number of Y rows
+    private char[][] plane; // where characters are stored
+
+    // -------- CONSTRUCTOR --------
+    public coordinatePlane(int width, int height) {
+
+        this.width = width;
+        this.height = height;
+
+        // create the 2D array
+        plane = new char[height][width];
+
+        // fill the plane with '.' so everything starts empty
+        for (int y = 0; y < height; y++) {
+            for (int x = 0; x < width; x++) {
+                plane[y][x] = '•';
+            }
+        }
+    }
+
+    // -------- PLOT A CHARACTER AT (x, y) --------
+    public void plot(int x, int y, char symbol) {
+
+        // protect against invalid coordinates
+        if (x < 0 || x >= width || y < 0 || y >= height) {
+            System.out.println("Coordinates out of range: (" + x + "," + y + ")");
+            return;
+        }
+
+        // store the symbol in the 2D array
+        plane[y][x] = symbol;
+    }
+
+    // -------- PRINT THE ENTIRE PLANE --------
+    public void print() {
+        for (int y = 0; y < height; y++) {
+            for (int x = 0; x < width; x++) {
+                System.out.print(plane[y][x]);
+            }
+            System.out.println(); // new line after each row
+        }
+    }
+}
+
