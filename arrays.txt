@@ -1,0 +1,74 @@
+public class Arrays
+{
+    private int[] nums;
+
+    public Arrays(){
+        nums = new int[10];  // Initialize array
+        
+        for(int i = 0; i < nums.length; i++){
+            nums[i] = (int)(Math.random() * 100);
+        }
+    }
+
+    public int max(){
+        int num = nums[0];
+        for(int i = 1; i < nums.length; i++){
+            if (nums[i] > num){
+                num = nums[i];
+            }
+        }
+        return num;
+    }
+
+    public int min(){
+        int num = nums[0];
+        for(int i = 1; i < nums.length; i++){
+            if(nums[i] < num){
+                num = nums[i];
+            }
+        }
+        return num;
+    }
+
+    public void sort(){
+        // Simple bubble sort
+        for(int i = 0; i < nums.length - 1; i++){
+            for(int j = 0; j < nums.length - 1 - i; j++){
+                if(nums[j] > nums[j+1]){
+                    int temp = nums[j];
+                    nums[j] = nums[j+1];
+                    nums[j+1] = temp;
+                }
+            }
+        }
+    }
+
+    public int sum(){
+        int total = 0;
+        for(int i = 0; i < nums.length; i++){
+            total += nums[i];
+        }
+        return total;
+    }
+
+    public void printArray(){
+        for(int num : nums){
+            System.out.print(num + " ");
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args)
+    {
+        Arrays list = new Arrays();
+
+        list.printArray();
+        System.out.println("Max: " + list.max());
+        System.out.println("Min: " + list.min());
+        System.out.println("Sum: " + list.sum());
+
+        list.sort();
+        System.out.println("Sorted:");
+        list.printArray();
+    }
+}
