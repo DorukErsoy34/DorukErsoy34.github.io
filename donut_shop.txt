@@ -1,0 +1,28 @@
+import java.util.Scanner;
+public class MyProgram
+{
+    public static void main(String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        int start = input.nextInt();
+        int event = input.nextInt();
+        for(int i = 0; i<event; i++){
+            
+            String sign = input.next();
+            
+            int num = input.nextInt();
+            if(sign.equals("+")){
+                start+= num;
+            }else{
+                start -= num;
+            }
+            if(start<0){
+                System.out.println("you cant get "+ num+ ", you will get "+ Math.abs(start)+" less");
+                start = 0;
+            }
+            
+        }
+        System.out.println(start);
+        
+    }
+}
