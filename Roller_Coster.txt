@@ -1,0 +1,20 @@
+import java.util.Scanner;
+public class MyProgram
+{
+    public static void main(String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        
+        int n = input.nextInt();
+        int c = input.nextInt();
+        int p = input.nextInt();
+        int o = (c * p) - n;
+        
+        if (o >= 0){
+            System.out.println("yes");
+        } else{
+            System.out.println("no");
+        }
+        
+    }
+}
