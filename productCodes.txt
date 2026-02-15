@@ -1,0 +1,55 @@
+import java.util.Scanner;
+public class MyProgram
+{
+    public static void main(String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        int n = input.nextInt();
+        input.nextLine();   // clear buffer
+        for(int i = 0; i < n; i++)
+        {
+            String code = input.nextLine();
+            System.out.println(update(code));
+        }
+    }
+    public static String update(String code)
+    {
+        String upper = "";
+        int sum = 0;
+        int i = 0;
+        while(i < code.length())
+        {
+            char c = code.charAt(i);
+            // If uppercase letter → keep it
+            if(Character.isUpperCase(c))
+            {
+                upper += c;
+                i++;
+            }
+            // If digit OR negative sign → build full number
+            else if(Character.isDigit(c) || c == '-')
+            {
+                int sign = 1;
+                if(c == '-')
+                {
+                    sign = -1;
+                    i++;
+                }
+                int number = 0;
+                while(i < code.length() && Character.isDigit(code.charAt(i)))
+                {
+                    number = number * 10 + (code.charAt(i) - '0');
+                    i++;
+                }
+                sum += sign * number;
+            }
+            // Otherwise (lowercase letter)
+            else
+            {
+                i++;
+            }
+        }
+        return upper + sum;
+    }
+    
+}
