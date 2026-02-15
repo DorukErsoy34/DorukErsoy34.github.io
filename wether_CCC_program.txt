@@ -1,0 +1,47 @@
+import java.util.Scanner;
+public class weather
+{
+    public int num;
+    public String[] days;
+    
+    public weather(String[] days , int num){
+        this.num = num; 
+        this.days = days;
+    }
+    
+    public int streek(int num){
+        int sunny = 0;
+        int maxsunny = 0;
+        int error = 0;
+        for(int i = 0 ; i < num ; i++){
+            if(days[i].equals("s")){
+                sunny++;
+            }else{
+                if(error == 1){
+                    if(maxsunny <= sunny){
+                        maxsunny = sunny;
+                        error = 0;
+                    }
+                    sunny = 0;
+                }else{
+                    error++;
+                    sunny++;
+                }
+            }
+        }return maxsunny;
+    }
+    public static void main(String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        int num = input.nextInt();
+        input.nextLine();
+        String[] days = new String[num];
+        for(int i = 0 ; i < num ; i++){
+            days[i] = input.nextLine();
+        }
+        weather sun = new weather(days, num);
+        int result = sun.streek(num);
+        System.out.println(result);
+        
+    }
+}
