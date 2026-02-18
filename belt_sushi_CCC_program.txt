@@ -1,0 +1,19 @@
+import java.util.Scanner;
+public class sushi
+{
+    public static int price(int R, int G, int B){
+        int total = 0;
+        total += R*3;
+        total += G*4;
+        total += B*5;
+        return total;
+    }
+    public static void main(String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        int R = input.nextInt();
+        int G = input.nextInt();
+        int B = input.nextInt();
+        System.out.println(sushi.price(R,G,B));
+    }
+}
