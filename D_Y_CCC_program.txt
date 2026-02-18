@@ -1,0 +1,27 @@
+import java.util.Scanner;
+public class Dusa
+{
+    public static int size(int start, int[] arr){
+        int len = arr.length;
+        for(int i = 0; i < len; i++){
+            if(arr[i]<start){
+                start+=arr[i];
+            }else{
+                return start;
+            }
+        }
+        return start;
+    }
+    public static void main(String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        int start = input.nextInt();
+        int many = input.nextInt();
+        int[] arr = new int[many];
+        for(int i = 0; i < many; i++){
+            arr[i] = input.nextInt();
+        }
+        System.out.println(Dusa.size(start,arr));
+        
+    }
+}
