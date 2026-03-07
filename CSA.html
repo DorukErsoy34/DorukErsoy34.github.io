@@ -705,7 +705,131 @@ for(int r = 0; r < matrix.length; r++){
     }
 }
 System.out.println(count);
-        
+Searching Algorithms
+Searching algorithms are used to find a specific value in a list or array.
+Two common types:
+1. Linear Search
+- Checks each element one by one.
+- Works on both sorted and unsorted lists.
+- Slower for large lists.
+Example:
+int linearSearch(int[] arr, int target) {
+    for(int i = 0; i < arr.length; i++) {
+        if(arr[i] == target) {
+            return i;
+        }
+    }
+    return -1;
+}
+Time Complexity:
+O(n)
+2. Binary Search
+- Works ONLY on sorted arrays.
+- Repeatedly checks the middle element.
+- Eliminates half of the list each step.
+Example:
+int binarySearch(int[] arr, int target) {
+    int low = 0;
+    int high = arr.length - 1;
+    while(low <= high) {
+        int mid = (low + high) / 2;
+        if(arr[mid] == target) {
+            return mid;
+        }
+        else if(arr[mid] < target) {
+            low = mid + 1;
+        }
+        else {
+            high = mid - 1;
+        }
+    }
+    return -1;
+}
+Time Complexity:
+O(log n)
+Sorting Algorithms
+Sorting algorithms arrange elements in a specific order
+(usually ascending or descending).
+Common algorithms:
+1. Selection Sort
+- Finds the smallest value.
+- Swaps it with the first unsorted element.
+Example:
+void selectionSort(int[] arr) {
+    for(int i = 0; i < arr.length - 1; i++) {
+        int minIndex = i;
+        for(int j = i + 1; j < arr.length; j++) {
+            if(arr[j] < arr[minIndex]) {
+                minIndex = j;
+            }
+        }
+        int temp = arr[i];
+        arr[i] = arr[minIndex];
+        arr[minIndex] = temp;
+    }
+}
+Time Complexity:
+O(n²)
+2. Insertion Sort
+- Builds a sorted section of the array.
+- Inserts each element into its correct position.
+Example:
+void insertionSort(int[] arr) {
+    for(int i = 1; i < arr.length; i++) {
+        int key = arr[i];
+        int j = i - 1;
+        while(j >= 0 && arr[j] > key) {
+            arr[j + 1] = arr[j];
+            j--;
+        }
+        arr[j + 1] = key;
+    }
+}
+Recursion
+Recursion is when a method calls itself.
+Two important parts:
+1. Base Case
+The condition that stops recursion.
+2. Recursive Case
+The method calls itself with a smaller problem.
+Example: Factorial
+5! = 5 × 4 × 3 × 2 × 1
+Recursive solution:
+int factorial(int n) {
+    if(n == 1) {
+        return 1;   // base case
+    }
+    return n * factorial(n - 1);  // recursive call
+}
+Execution:
+factorial(5)
+= 5 * factorial(4)
+= 5 * 4 * factorial(3)
+= 5 * 4 * 3 * factorial(2)
+= 5 * 4 * 3 * 2 * factorial(1)
+= 120
+Recursive Searching and Sorting
+Searching and sorting algorithms can also be written using recursion.
+Example: Recursive Binary Search
+int binarySearch(int[] arr, int target, int low, int high) {
+    if(low > high) {
+        return -1;
+    }
+    int mid = (low + high) / 2;
+    if(arr[mid] == target) {
+        return mid;
+    }
+    else if(arr[mid] < target) {
+        return binarySearch(arr, target, mid + 1, high);
+    }
+    else {
+        return binarySearch(arr, target, low, mid - 1);
+    }
+}
+Example Call:
+binarySearch(arr, 25, 0, arr.length - 1)
+Mid-Unit Assessment
+
     </pre>
     <p>CSA AP FRQ Answers</p>
     <a href="https://drive.google.com/file/d/1quhJkRv-99SnCWI2ni-bASwuKf2hpRVJ/view?usp=sharing">Pic 1</a>
