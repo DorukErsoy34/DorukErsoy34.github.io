@@ -583,7 +583,128 @@ Used to save data between runs.
 Wrapper classes turn primitive types into objects.
 Needed when objects are required (like in arrays/lists).
 Examples: Integer, Double, Boolean.
-
+4.8 ArrayList Methods
+ArrayList, boyutu değişebilen (dynamic) bir listedir. Dizilerden farklı olarak
+eleman ekleyip çıkarabilirsiniz. Java’da ArrayList 
+kullanabilmek için önce import edilmesi gerekir: import java.util.ArrayList;
+Temel ArrayList metotları:
+add(element) → Listenin sonuna eleman ekler
+add(index, element) → Belirli indexe eleman ekler
+get(index) → Belirli indexteki elemanı getirir
+set(index, element) → Belirli indexteki elemanı değiştirir
+remove(index) → Belirli indexteki elemanı siler
+size() → Listedeki eleman sayısını döndürür
+clear() → Tüm elemanları siler
+Örnek:
+ArrayList<String> names = new ArrayList<String>();
+names.add("Ali");
+names.add("Ayse");
+names.add("Mehmet");
+System.out.println(names.get(1)); // Ayse
+names.set(1, "Fatma"); // Ayse yerine Fatma koyar
+names.remove(0); // Ali silinir
+System.out.println(names.size()); // 2
+4.9 ArrayList Traversals
+Traversal, bir listenin tüm elemanlarını sırayla dolaşmak anlamına gelir. ArrayList
+traversal için iki yaygın yöntem vardır: normal for loop ve enhanced for loop.
+1) For loop kullanımı:
+ArrayList<Integer> numbers = new ArrayList<Integer>();
+numbers.add(5);
+numbers.add(10);
+numbers.add(15);
+for(int i = 0; i < numbers.size(); i++){
+    System.out.println(numbers.get(i));
+}
+Burada size() listenin uzunluğunu verir ve get(i) ile elemanlara erişilir.
+2) Enhanced for loop:
+for(int num : numbers){
+    System.out.println(num);
+}
+Bu yöntem daha kısa yazılır ancak index kullanılmaz. Bu yüzden eleman değiştirme
+veya silme işlemlerinde genelde normal for loop tercih edilir.
+4.10 Implementing ArrayList Algorithms
+ArrayList üzerinde algoritmalar yazabiliriz. En yaygın algoritmalar: maksimum
+bulma, eleman sayma, eleman silme gibi işlemlerdir.
+Örnek 1: En büyük sayıyı bulma
+ArrayList<Integer> numbers = new ArrayList<Integer>();
+numbers.add(7);
+numbers.add(2);
+numbers.add(15);
+numbers.add(9);
+int max = numbers.get(0);
+for(int i = 1; i < numbers.size(); i++){
+    if(numbers.get(i) > max){
+        max = numbers.get(i);
+    }
+}
+System.out.println(max);
+Örnek 2: Çift sayıları silme
+for(int i = numbers.size() - 1; i >= 0; i--){
+    if(numbers.get(i) % 2 == 0){
+        numbers.remove(i);
+    }
+}
+Burada döngünün sondan başlamasının nedeni remove() işleminin indexleri kaydırmasıdır.
+4.11 2D Array Creation and Access
+2D array, satır ve sütunlardan oluşan iki boyutlu bir dizidir. Matris gibi düşünülebilir.
+2D array oluşturma:
+int[][] matrix = new int[3][4];
+Bu ifade 3 satır ve 4 sütunluk bir dizi oluşturur.
+Eleman atama:
+matrix[0][0] = 5;
+matrix[1][2] = 10;
+matrix[2][3] = 7;
+Eleman erişimi:
+System.out.println(matrix[1][2]);
+Index yapısı:
+matrix[row][column]
+Row ve column indexleri her zaman 0’dan başlar.
+4.12 2D Array Traversals
+2D array içindeki tüm elemanları dolaşmak için nested loop (iç içe döngü) kullanılır.
+Örnek:
+int[][] matrix = {
+    {1,2,3},
+    {4,5,6},
+    {7,8,9}
+};
+for(int r = 0; r < matrix.length; r++){
+    for(int c = 0; c < matrix[0].length; c++){
+        System.out.println(matrix[r][c]);
+    }
+}
+matrix.length → satır sayısı
+matrix[0].length → sütun sayısı
+İlk döngü satırları, ikinci döngü sütunları dolaşır.
+4.13 Implementing 2D Array Algorithms
+2D array üzerinde algoritmalar yazmak için genellikle nested loop kullanılır.
+Örnek 1: Tüm elemanların toplamını bulma
+int sum = 0;
+for(int r = 0; r < matrix.length; r++){
+    for(int c = 0; c < matrix[0].length; c++){
+        sum += matrix[r][c];
+    }
+}
+System.out.println(sum);
+Örnek 2: En büyük elemanı bulma
+int max = matrix[0][0];
+for(int r = 0; r < matrix.length; r++){
+    for(int c = 0; c < matrix[0].length; c++){
+        if(matrix[r][c] > max){
+            max = matrix[r][c];
+        }
+    }
+}
+System.out.println(max);
+Örnek 3: Belirli bir sayının kaç kez geçtiğini bulma
+int count = 0;
+for(int r = 0; r < matrix.length; r++){
+    for(int c = 0; c < matrix[0].length; c++){
+        if(matrix[r][c] == 5){
+            count++;
+        }
+    }
+}
+System.out.println(count);
         
     </pre>
 
